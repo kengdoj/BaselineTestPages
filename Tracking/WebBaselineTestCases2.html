@@ -16,7 +16,13 @@
 th, td {
 	text-align: left;
 	vertical-align: top;}
-	
+<!-- li.questionable {
+	background-color: yellow;
+} -->
+li.questionable::before {
+	content: "Review Needed: ";
+	background-color: yellow;
+}	
 </style>
 
 <script src="jquery-3.3.1.js"></script>
@@ -98,7 +104,7 @@ $(document).ready(function() {
 		<p>Fail</p>
 		<ol>
 			<li>show/hide cannot be accessed and executed by keyboard  </li>
-			<li><li>AK's passing scenario 1 <a href="http://coc.kciprojects.com/ooc/stubs/Keyboard_2.1.1_Scrollable-Region.html" target="_blank">scrollable region</a> - get on its own page</li></li>
+			<li>AK's passing scenario 1 <a href="http://coc.kciprojects.com/ooc/stubs/Keyboard_2.1.1_Scrollable-Region.html" target="_blank">scrollable region</a> - get on its own page</li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -398,12 +404,27 @@ $(document).ready(function() {
 			<li>div role="img", with innerText: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
 			<li>div role="img", with innerText, title: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
 			<li>div role="img", with innerText, aria-label: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, alt on img: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, title on img: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-label on img: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-labelledby on img: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, title on &#60;a&#62;: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-label on &#60;a&#62;: Scenario 7 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-labelledby on &#60;a&#62;: Scenario 8 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li class="questionable">Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, only aria-describedby on &#60;a&#62;: Scenario 9 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Input type=image, alt on input: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, title on input: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-label on input: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-labelledby on input: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li class="questionable">Input type=image, only aria-describedby on input: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
 		</ol>
 		<p>Fail</p>
 		<ol>
 			<li>no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_H37.ImageLabels.html" target="_blank">AK Image Labeling</a> - get on its own page </li>
 			<li>div role="img", no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
 			<li>div role="img", with alt: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, also fails 2.4.4, Baseline 14 Links</li>
+			<li>Input type=image, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, fails 6a. Meaningful Image and 14. Buttons</li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -692,6 +713,7 @@ $(document).ready(function() {
 			<li>Input type=select, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
 			<li>Input type=select, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
 			<li>div role=textbox, aria-labelledby: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_ARIA-InputFieldName.html" target="_blank">AK AriaInputFieldName</a> - get on its own page</li>
+			
 		</ol>
 		<p>Fail</p>
 		<ol>
@@ -710,6 +732,7 @@ $(document).ready(function() {
 			<li>Input type=select, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
 			<li>Input type=textfocusable, with aria-hidden: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_1.3.1_HiddenLabel_F68.Hidden.html" target="_blank">AK F68Hidden</a> - get on its own page</li>
 			<li>div role=textbox, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_ARIA-InputFieldName.html" target="_blank">AK AriaInputFieldName</a> - get on its own page</li>
+			
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -939,7 +962,8 @@ $(document).ready(function() {
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li><a href="http://coc.kciprojects.com/ooc/stubs/PageTitles_2.4.2_NoTitleElement.html" target="_blank">AK NoTitleElement</a></li>
+			<li><a href="http://coc.kciprojects.com/ooc/stubs/PageTitles_2.4.2_EmptyTitle.html" target="_blank">AK EmptyTitle</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -952,9 +976,10 @@ $(document).ready(function() {
 	  <tr>
 		<th scope="row">12.a Tables</th>
         <!-- <th scope="row">2.4.6 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#headings-and-labels" target="_blank">Headings and labels</a></th> -->
-		<td><p>All content/data visually presented in a table with column and/or row headers where the content, when linearized, is not in a meaningful sequence.</p>
+		<td><p>Data Tables</p>
+			<p>All content/data visually presented in a table with column and/or row headers where the content, when linearized, is not in a meaningful sequence.</p>
 			<p>Note: Linearization of table content is the presentation of a table’s two-dimensional content in one-dimensional order of the content in the source, beginning with the first cell in the first row and ending with the last cell in the last row, from left to right, top to bottom.</p>
-			<p>Data Tables</p></td>
+		</td>	
         <td>
 			<ol>
 				<li>Table: Check that each data table has programmatic markup to identify it as a table using one of the following techniques:
@@ -995,11 +1020,16 @@ $(document).ready(function() {
         <td>
 		<p>Pass</p>
 		<ol>
-			<li></li>
+			<li>Simple table that has the headers in the first row that use the TH elements without scope: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_2headers-No-Valid-Header-Coding_H43.H63.html" target="_blank">AK NoValideHeaderCodingH43</a></li>
+			<li>Simple table that has the headers in the first column that use the TH elements without scope</li>
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Simple table with row and col headers using only th: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_2headers-No-Valid-Header-Coding_H43.H63.html" target="_blank">AK NoValideHeaderCodingH43</a></li>
+			<li>Complex table data cell no headers attribute <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_H43.MissingHeadersAttr.html" target="_blank">AK MissingHeadersAttr</a></li>
+			<li>Complex table data cell headers attribute missing ID of a col header<a href="http://coc.kciprojects.com/ooc/stubs/Tables_3.1.2_H43_IncorrectHeadersAttribute.html" target="_blank">AK IncorrectHeadersAttribute</a></li>
+			<li>Complex table header cell missing ID <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1-H43.MissingHeaderIds.html" target="_blank">AK MissingHeaderIds</a></li>
+			<li>Data table cell headers attribute references a different data table header: <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_HeadersInSameTable.html" target="_blank">AK HeadersInSameTable</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1012,9 +1042,10 @@ $(document).ready(function() {
 	  <tr>
 		<th scope="row">12.b Tables</th>
         <!-- <th scope="row">2.4.7 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#focus-visible" target="_blank">Focus visible</a></th> -->
-		<td><p>All content/data visually presented in a table with column and/or row headers where the content, when linearized, is not in a meaningful sequence.</p>
+		<td><p>Layout Tables</p>
+			<p>All content/data visually presented in a table with column and/or row headers where the content, when linearized, is in a meaningful sequence.</p>
 			<p>Note: Linearization of table content is the presentation of a table’s two-dimensional content in one-dimensional order of the content in the source, beginning with the first cell in the first row and ending with the last cell in the last row, from left to right, top to bottom.</p>
-			<p>Layout Tables</p>
+			
 		</td>
         <td>
 			<p>Check that tables used purely for layout purposes:</p>
@@ -1027,11 +1058,15 @@ $(document).ready(function() {
         <td>
 		<p>Pass</p>
 		<ol>
-			<li></li>
+			<li>Layout table with aria role="presentation"</li>
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Layout table with aria role="table"</li>
+			<li>Layout table uses caption element: <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_H39.LayoutWithCaptions.html" target="_blank">AK LayoutWithCaptions</a>
+			<li>Layout table uses summary element: <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_H73.LayoutWithSummary.html" target="_blank">AK LayoutWithSummary</a>
+			<li>Layout table with th</li>
+			<li>Layout table with scope</li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1088,7 +1123,7 @@ $(document).ready(function() {
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>3 Visual headings using a styled P: <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_HeadingsCreatedByFormattingOnly.html" target="_blank">AK HeadingsCreatedByFormattingOnly</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1110,7 +1145,7 @@ $(document).ready(function() {
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Empty heading h5: <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_H42.EmptyHeading.html" target="_blank">AK EmptyHeading</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1141,11 +1176,11 @@ $(document).ready(function() {
         <td>
 		<p>Pass</p>
 		<ol>
-			<li></li>
+			<li>Ordered list: Scneario 2 of <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_Lists.html" target="_blank">AK ContentStructureLists</a></li>
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Bullet list not contained by OL or UL: Scenario 1 of <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_Lists.html" target="_blank">AK ContentStructureLists</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1163,15 +1198,59 @@ $(document).ready(function() {
         <td>
 		<p>Pass</p>
 		<ol>
-			<li></li>
+			<li>Link with innerText: Scenario 5 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - get on its own page</li>
+			<li class="questionable">Link with title: Scenario 6 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li class="questionable">Link with aria-label: Scenario 7 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - (weird use case) needs a visible label, get on its own page</li>
+			<li class="questionable">Link with aria-labelledby: Scenario 8 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - (weird use case) get on its own page</li>
+			<li class="questionable">link with aria-describedby only: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - (weird use case) Is combo accname+accdesc acceptable? get on its own page</li>
+			<li>Link with innerText: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - get on its own page</li>
+			<li class="questionable">Link with title: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li class="questionable">Link with aria-label: Scenario5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li class="questionable">Link iwth aria-labelledby: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li>&#60;Button&#62;, with innerText: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.Button.Name.html" target="_blank">AK LinksAndButtonsButtonName</a> - get on its own page</li>
+			<li>role=button, innerText: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>role=button, title: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>role=button, aria-label: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>role=button, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li class="questionable">role=button, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>input type=submit, no other attributes: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>input type=submit, value: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>input type=reset, no other attributes: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>input type=reset, value: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>Role=link</li>	
+			<li>Link purpose determinable from list container</li>
+			<li>Link purpose determinable from preceding paragraph container "more"</li>
+			<li>Link purpose determinable from table cell container and header</li>
+			<li>Image Link, alt on img: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, title on img: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-label on img: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-labelledby on img: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, title on &#60;a&#62;: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-label on &#60;a&#62;: Scenario 7 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-labelledby on &#60;a&#62;: Scenario 8 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li class="questionable">Image Link, only aria-describedby on &#60;a&#62;: Scenario 9 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Input type=image, alt on input: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, title on input: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-label on input: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-labelledby on input: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li class="questionable">Input type=image, only aria-describedby on input: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Link with no accname: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - add a visible link for purpose, get on its own page</li>
+			<li>Link with incomplete accname "tel:": Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - add a visible tel number, get on its own page</li>
+			<li>Link with incomplete accname "mailto:": Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - add a visible email address, get on its own page</li>
+			<li>Link with no accname, empty href: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - add a visible link for purpose, get on its own page</li>
+			<li class="questionable">Link with empty href, aria-describedby only: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - Is combo accname+accdesc acceptable? add a visible link for purpose, get on its own page</li>
+			<li>&#60;Button&#62;, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.Button.Name.html" target="_blank">AK LinksAndButtonsButtonName</a> - no visible label, get on its own page</li>
+			<li>role=button, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>input type=button, no accname: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>Image Link, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, also fails 1.1.1, Baseline 6 Images</li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
-			<li></li>
+			<li class="questionable">&#60;a&#62; with no href, no label: Scneario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - ANDI didn't find the link, AK marked this as failing, get on its own page</li>
+			<li>not a link or button</li>
 		</ol>
 		</td>
         <td>2.4.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#link-purpose-in-context" target="_blank">Link purpose (in context)</a></td>
@@ -1200,7 +1279,8 @@ $(document).ready(function() {
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Page with no lang on hmtl tag: <a href="http://coc.kciprojects.com/ooc/stubs/Language_3.1.1_H57.LanguageTag.html" target="_blank">AK LanguageTag</a></li>
+			<li>Page has lang attribute, invalid lang code: <a href="http://coc.kciprojects.com/ooc/stubs/Language_3.1.1_H57.MainLanguageCodeInvalid.html" target="_blank">AK MainLanguageCodeInvalid</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1233,7 +1313,7 @@ $(document).ready(function() {
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Spanish segment not identified on English page: <a href="http://coc.kciprojects.com/ooc/stubs/Language_3.1.1_H58.LanguageContentSegment.html" target="_blank">AK LanguageContentSegment</a> </li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1522,7 +1602,7 @@ $(document).ready(function() {
         <td>-</td>
       </tr>
 	  <tr>
-		<th scope="row">19.a Frames and iFrames</th>
+		<th scope="row">19.a Frames</th>
         <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
 		<td><p>Frames</p></td>
         <td><p>Check if each &#60;frame&#62; has a title attribute that describes its content.</p></td>
@@ -1533,7 +1613,7 @@ $(document).ready(function() {
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>3 frames, 1 with no title: <a href="http://coc.kciprojects.com/ooc/stubs/sframes/sframes.html" target="_blank">AK Static Frames</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1544,7 +1624,7 @@ $(document).ready(function() {
         <td>-</td>
       </tr>
 	  <tr>
-		<th scope="row">19.b Frames and iFrames</th>
+		<th scope="row">19.b iFrames</th>
         <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
 		<td>iFrames</td>
         <td><p>Check if the combination of <a href="https://www.w3.org/TR/html-aam-1.0/#iframe-element" target="_blank">accessible name and description</a> for each &#60;iframe&#62; describes its content</p></td>
@@ -1555,7 +1635,8 @@ $(document).ready(function() {
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>No iframe acc name: <a href="http://coc.kciprojects.com/ooc/stubs/siframes/BarrierTest_siFrames.html" target="_blank">AK BarrierTest_siFrames</a></li>
+			<li>2 iframes, 1 with no acc name: <a href="http://coc.kciprojects.com/ooc/stubs/siframes/BarrierTest_siFrames2.html" target="_blank">AK BarrierTest_siFrames2</a></li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
@@ -1750,7 +1831,7 @@ $(document).ready(function() {
 		<td>
 		<p>Pass</p>
 		<ol>
-			<li></li>
+			<li class="questionable">Zoom to 200% ok: <a href="http://coc.kciprojects.com/ooc/stubs/Resize-Text_1.4.4_DisabledScaling.html" target="_blank">AK Disabled Scaling</a> - AK fails this</li>
 		</ol>
 		<p>Fail</p>
 		<ol>
@@ -1832,11 +1913,11 @@ $(document).ready(function() {
         <td>
 		<p>Pass</p>
 		<ol>
-			<li></li>
+			<li>Duplicate IDs on 2 divs, one has aria-hidden true: <a href="http://coc.kciprojects.com/ooc/stubs/Parsing_1.4.1_UniqueID.html" target="_blank">AK Parsing UniqueID</a> - get on its own page</li>
 		</ol>
 		<p>Fail</p>
 		<ol>
-			<li></li>
+			<li>Duplicate IDs on 2 divs: <a href="http://coc.kciprojects.com/ooc/stubs/Parsing_1.4.1_UniqueID.html" target="_blank">AK Parsing UniqueID</a> - get on its own page</li>
 		</ol>
 		<p>Not applicable</p>
 		<ol>
