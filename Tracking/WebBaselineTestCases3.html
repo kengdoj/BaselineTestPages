@@ -1,0 +1,1969 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Test Cases for ICT Web Baseline</title>
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="jquery.dataTables.min_ke.css">
+<style class="init">
+</style>
+<style>
+th, td {
+	text-align: left;
+	vertical-align: top;}
+<!-- li.questionable {
+	background-color: yellow;
+} -->
+li.questionable::before {
+	content: "Review Needed: ";
+	background-color: yellow;
+}	
+</style>
+
+<script src="jquery-3.3.1.js"></script>
+<script src="jquery.dataTables.min.js"></script>
+<script src="natural.js"></script>
+<!-- adjust target # for each table -->	
+<script class="init">
+$(document).ready(function() {
+	$('#example').dataTable( {
+    columnDefs: [
+      { type: 'natural', targets: [0, 5] }  //update this for number of cols in table if want all cols sortable
+	// http://legacy.datatables.net/usage/columns for bSortable doesn't work; it changes the sort
+	//ColumnDefs: [
+	//	{ type: 'natural', targets: [ 0, 4, 5 ]}  
+		 //bsortable: false, aTargets: [1, 2, 3 ] }
+     ]
+  } );
+} );
+</script>
+
+</head>
+
+<body>
+
+
+<h1>ICT Testing Baseline for Web Test Cases</h1>
+<p>The test cases listed below are for the <a href="https://section508coordinators.github.io/ICTTestingBaseline/" target="_blank">ICT Testing Baseline for Web</a>. </p>
+
+<p>Select one of the column headers to sort the table.</p>
+<hr>
+
+  <table id="example" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th scope="col" style="width:5%">
+            Baseline Test
+        </th>
+		<th scope="col" style="width:25%" class="nosort">
+            Identify Content         
+        </th>
+		<th scope="col" style="width:30%">
+            Test Instruction          
+        </th>
+		<th scope="col" style="width:30%">
+            Test Cases
+        </th>
+		<th scope="col" style="width:5%">
+            Applicable requirement
+        </th>
+		<th scope="col" style="width:5%">
+            Additional Applicable requirement       
+        </th>
+		
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+		<th scope="row">1.a Keyboard Access</th>
+        <!-- <th scope="row">1.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#non-text-content" target="_blank">Non-text content</a></th> -->
+		<td><p>All functionality of the content that is available by mouse control must be keyboard accessible. Determine the functionality of visible and hidden interactive interface components (links, form fields, drop down menus, show/hide content, tree views, pop ups/light boxes, iframes, etc.) available using a mouse (hover and/or click).</p></td>
+        <td>
+			<p>Check that all functionality can be accessed and executed using only the keyboard.</p>
+					<ol type="a">
+						<li>Use the keyboard to perform functions available by mouse (including drop-down menus, form fields, revealing/hiding content, tooltips, AND all interactive interface components).</li>
+						<li>If an interactive interface component is not available by keyboard, check if another control is provided on the page with the same functionality which is available by keyboard. (All functionality must meet this requirement.)</li>
+					</ol>	
+			<p>Check that individual keystrokes do not require specific timings for activation.</p>
+					<ul>
+						<li>If operation requires specific timings of individual keystrokes, check if another control is provided on the page with the same functionality which does not require specific timings for operation. (All functionality must be available without requiring specific timings for individual keystrokes to operate.)</li>
+					</ul>
+		</td>
+		<td>
+		<p>Pass</p>
+		<ol>
+			<li>Show/hide can be accessed and executed by keyboard</li>
+			<li>Scenario 2 <a href="http://coc.kciprojects.com/ooc/stubs/Keyboard_2.1.1_Scrollable-Region.html" target="_blank">AK scrollable region</a></li>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>show/hide cannot be accessed and executed by keyboard  </li>
+			<li>AK's passing scenario 1 <a href="http://coc.kciprojects.com/ooc/stubs/Keyboard_2.1.1_Scrollable-Region.html" target="_blank">scrollable region</a> - get on its own page</li>
+			<li>Javascript onmouseover not focusable with keyboard: 5.3 from <a href="andi_testpages/andi_test3.html" target="_blank">andi_test3</a> - get on its own page</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li>an image does not require keyboard access</li>
+		</ol>
+		</td>
+		<td>2.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#keyboard" target="_blank">Keyboard</a></td>
+        <td>-</td>
+        
+      </tr>
+	  
+	  <tr>
+		<th scope="row">1.b Keyboard Access</th>
+        <!-- <th scope="row">1.2.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-only-and-video-only-prerecorded" target="_blank">Audio-only and video only (prerecorded)</a></th> -->
+		<td><p>Visible and hidden interactive interface components (links, form fields, drop down menus, show/hide content, tree views, pop ups/light boxes, frames, iframes, etc.) that can be navigated to by keyboard.</p></td>
+        <td>
+			<p>Check that focus can be moved away from the component. There must be NO “TRAP” that disrupts keyboard navigation.</p>
+				<ul>
+					<li>If a keyboard trap is found, inspect any help (contextual help, or application help) and documentation for notification of available alternate keyboard commands (e.g., non-standard keyboard controls, access keys, hotkeys).</li>
+					<li>If nonstandard keyboard commands are required to navigate away from a component or set of components, check that the commands work.</li>
+				</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+		<td>2.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#no-keyboard-trap" target="_blank">No keyboard trap</a></td>
+        <td>WCAG <a href="https://www.w3.org/TR/WCAG20/#cc5" target="_blank">Conformance Requirement 5: Non-Interference</a></td>
+        
+      </tr>
+	  <tr>
+		<th scope="row">2. Focus Visible</th>
+        <!-- <th scope="row">1.2.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#captions-prerecorded" target="_blank">Captions (prerecorded)</a></th> -->
+		<td><p>Keyboard accessible interface components (e.g., links, form fields, drop down menus, show/hide content, tree views, pop ups/light boxes, frames, iframes).</p></td>
+        <td>
+			<ol>
+				<li>Use the keyboard to navigate through each interface component.</li>
+				<li>Check that a visible indication of focus is provided when focus is on the interface component.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+		<td>2.4.7 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#focus-visible" target="_blank">Focus visible</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+        <th scope="row">3.a Focus Order</th>
+		<!-- <th scope="row">1.2.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-description-or-media-alternative-prerecorded" target="_blank">Audio description or media alternative (prerecorded)</a></th> -->
+		<td><p>Keyboard accessible interface components (links, form fields, drop down menus, show/hide content, tree views, pop ups/light boxes, frames, iframes, etc.) that have a meaningful sequence of navigation.</p></td>
+        <td>
+			<ol>
+				<li>Use the keyboard to navigate through interface components.
+					<ol type="A">
+						<li>Use the keyboard to activate trigger controls that reveal hidden content (menus, dialogs, expandable tree list, etc.).
+							<ol type="i">
+								<li>Check that focus is moved to the revealed content. (It is acceptable to TAB once or use an arrow key to move the focus forward into the revealed content.)</li>
+								<li>Advance the focus through the revealed content.</li>
+							</ol>
+						</li>
+						<li>Use the keyboard to close/hide the revealed content.
+							<ul>
+								<li>Check that focus is returned to the trigger control. (It is acceptable to [Shift+ TAB] once or use an arrow key to move the focus backward to the trigger control.</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				<li>Check that the focus order preserves the meaning and usability of the page.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+		<td>2.4.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#focus-order" target="_blank">Focus order</a></td>
+        <td>-</td>
+      </tr>
+      <tr>
+		<th scope="row">3.b Focus Order</th>
+        <!-- <th scope="row">1.2.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#captions-live" target="_blank">Captions (live)</a></th> -->
+		<td><p>Keyboard accessible interface components (links, form fields, drop down menus, show/hide content, tree views, pop ups/light boxes, frames, iframes, etc.).</p></td>
+        <td>
+			<ol>
+				<li>Use the keyboard to move focus to and navigate through each interactive interface component (including form drop-down lists and form fields).</li>
+				<li>Check that when an interface component receives focus, it does not initiate an unexpected change of context. Examples of a change of context include:
+					<ul>
+						<li>Forms submitted automatically when a component receives focus</li>
+						<li>New windows launched when a component receives focus</li>
+						<li>Focus is moved to another component</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+		<td>3.2.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#on-focus" target="_blank">On focus</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">4.a Repetitive Content</th>
+        <!-- <th scope="row">1.2.5 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-description-prerecorded" target="_blank">Audio description (precorded)</a></th> -->
+		<td><p>Blocks of content that are repeated on multiple pages, including navigation links, page headers, and banners.</p></td>
+        <td>
+			<ol>
+				<li>Use standard keyboard commands to navigate forward to repetitive blocks of content. Some bypass functions may not be visible until they receive focus.</li>
+				<li>Check that a keyboard-accessible method is provided to bypass repetitive content.</li>
+				<li>Use the keyboard to activate the bypass method and verify the functionality of the bypass function.</li>
+				<li>Check that the method works as intended. For example:
+					<ul>
+						<li>The block of repeated content is hidden, closed or skipped.</li>
+						<li>If the method is intended to skip, check that the focus is shifted past the repetitive content only. Content that is not repetitive should not be skipped. If there is only text/no interactive component to receive the shift of focus, it may not be evident that a focus shift occurred.</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.4.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#bypass-blocks" target="_blank">Bypass blocks</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">4.b Repetitive Content</th>
+        <!-- <th scope="row">1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></th> -->
+		<td><p>Navigational mechanisms that are repeated on multiple pages (which may or may not be contained within a block of content).</p></td>
+        <td>
+			<ol>
+				<li>Review multiple Web pages. Do not initiate changes to the content.</li>
+				<li>Check that each repeated navigational mechanism is in the same relative order as other repeated interface components on each Web page where it appears.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.2.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#consistent-navigation" target="_blank">Consistent navigation</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">4.c Repetitive Content</th>
+        <!-- <th scope="row">1.3.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#meaningful-sequence" target="_blank">Meaningful sequence</a></th> -->
+		<td><p>Components that have the same functionality within a set of Web pages.</p></td>
+        <td>
+			<p>Check that associated text (e.g., label, name, or text alternative) for identified content is identical for each instance where they perform the same function.</p>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.2.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#consistent-identification" target="_blank">Consistent identification</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">5. Changing Content</th>
+        <!-- <th scope="row">1.3.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#sensory-characteristics" target="_blank">Sensory characteristics</a></th> -->
+		<td><p>Identify changes in presented content (both user driven and automatic). Examples include changes to images, navigation trees, data table sort controls, automatic information updates, form elements, revealed content, etc.</p>
+			<ul>
+				<li>It may be necessary to use the mouse to determine whether state changes occur on hover or on click.</li>
+				<li>Depending on the component, a change of state may be triggered by various actions, such as changing values or states of other components, toggling a function, entering data in the component, mouseover, etc.</li>
+			</ul>
+		</td>
+        <td>
+			<ol>
+				<li>Check that the page provides a notification of the change in content programmatically.
+					<ul>
+						<li>Programmatic event notifications include alert dialogs, focus shifts to the content that changed, and ARIA live regions.</li>
+					</ul>
+				</li>
+				<li>For each change in content, check that the combination of name, role, state, and value of the changed content is accurate.
+					<dl>
+						<dt>Name: the name is accurate after a change.</dt>
+							<dd>Apply the <a href="https://www.w3.org/TR/html-aam-1.0/#accessible-name-and-description-computation" target="_blank">accessible name and description computation</a>, if applicable.</dd>
+						<dt>Role: the role accurately describes the purpose of the element after a change, if applicable.</dt>
+							<dd>Consider ARIA role, element type, and other descriptive text.</dd>
+						<dt>State: the state of the element is accurate after a change, if applicable</dt>
+							<dd>Evaluate ARIA and element-specific attributes (e.g., &#60;option selected=”true”&#62;)</dd>
+						<dt>Value: the value is updated after a change, if applicable.</dt>
+							<dd></dd>
+					</dl>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">6.a Images</th>
+        <!-- <th scope="row">1.4.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#use-of-color" target="_blank">Use of colour</a></th> -->
+		<td><p>Meaningful Image: conveys information (include images of text; functional images used to initiate action, convey meaning, or prompting a response; image maps, etc.)</p></td>
+        <td>
+			<ol>
+				<li>Check that the combination of accessible name and accessible description provide an equivalent description. Numerous attributes contribute to the computation of the accessible name and accessible description. Refer to <a href="https://www.w3.org/TR/html-aam-1.0/#img-element" target="_blank">HTML Accessibility API Mappings 1.0 for img</a>.
+					<ul>
+					<li>Descriptions of the image that are provided by page content must be programmatically associated.</li>
+					</ul>
+				</li>
+				<li>Check that the role is NOT “presentation”.</li>
+				<li>Check that aria-hidden is NOT set to true.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>img alt: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_H37.ImageLabels.html" target="_blank">AK Image Labeling</a> - get on its own page </li>
+			<li>img title: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_H37.ImageLabels.html" target="_blank">AK Image Labeling</a> - get on its own page </li>
+			<li>img aria-label: Scenario 4 (aria-label) from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_H37.ImageLabels.html" target="_blank">AK Image Labeling</a> - get on its own page </li>
+			<li>img aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_H37.ImageLabels.html" target="_blank">AK Image Labeling</a> - get on its own page </li>
+			<li class="questionable">img aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_H37.ImageLabels.html" target="_blank">AK Image Labeling</a> - get on its own page </li>
+			<li>div role="img", with innerText: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
+			<li>div role="img", with innerText, title: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
+			<li>div role="img", with innerText, aria-label: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, alt on img: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, title on img: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-label on img: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-labelledby on img: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, title on &#60;a&#62;: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-label on &#60;a&#62;: Scenario 7 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, aria-labelledby on &#60;a&#62;: Scenario 8 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li class="questionable">Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, only aria-describedby on &#60;a&#62;: Scenario 9 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Input type=image, alt on input: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, title on input: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-label on input: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-labelledby on input: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li class="questionable">Input type=image, only aria-describedby on input: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>SVG with title, dec: 9.1 from <a href="andi_testpages/andi_testpages/andi_test4.html" target="_blank">andi_test4.hmtl</a> - get on its own page</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_H37.ImageLabels.html" target="_blank">AK Image Labeling</a> - get on its own page </li>
+			<li>div role="img", no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
+			<li>div role="img", with alt: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_ARIA-Role-IMG.Labels.html" target="_blank">AK ARIA Role=IMG Labeling</a> - get on its own page </li>
+			<li>Link with image &#60;a href&#62;&#60;img&#62;&#60;/a&#62;, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, also fails 2.4.4, Baseline 14 Links</li>
+			<li>Input type=image, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, fails 6a. Meaningful Image and 14. Buttons</li>
+			<li>Figure with alt, title, IMG none: 8.8 from <a href="Andi_testpages/andi_testpages/andi_test4.html" target="_blank">andi_test4.hmtl</a> - get on its own page</li>
+			
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#non-text-content" target="_blank">Non-text content</a></td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">6.b Images</th>
+        <!-- <th scope="row">1.4.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-control" target="_blank">Audio control</a></th> -->
+		<td><p>Decorative Image: conveys no meaningful information or is described in text content</p></td>
+        <td>
+			<p>At least one of the following is true:</p>
+				<ul>
+					<li>The ARIA role is “presentation”.</li>
+					<li>The aria-hidden state is set to “true”.</li>
+					<li>The combination of accessible name and accessible description is empty (e.g. “”). Numerous attributes contribute to the computation of the accessible name and accessible description. Refer to <a href="https://www.w3.org/TR/html-aam-1.0/#img-element" target="_blank">HTML Accessibility API Mappings 1.0 for img</a>.</li>
+					<li>The image is inserted via CSS (e.g., using a background image).</li>
+				</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>img with role="presentation", with aria-label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_Decorative.html" target="_blank">AK Decorative Image Labeling</a></li>
+			<li>img with aria-hidden=true: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Images_1.1.1_Decorative.html" target="_blank">AK Decorative Image Labeling</a></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Decorative line image with alt="line"</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#non-text-content" target="_blank">Non-text content</a></td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">6.c Images</th>
+        <!-- <th scope="row">1.4.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#contrast-minimum" target="_blank">Contrast (minimum)</a></th> -->
+		<td><p>CAPTCHA Image: designed to determine if content is being accessed by a person rather than a computer</p></td>
+        <td>
+			<ol>
+				<li>Check that the combination of accessible name and accessible description identify and describe the purpose of the CAPTCHA.</li>
+				<li>Check that alternative forms of CAPTCHA are provided, at a minimum, for users without vision and users without hearing.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#non-text-content" target="_blank">Non-text content</a></td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">6.d Images</th>
+        <!-- <th scope="row">1.4.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#resize-text" target="_blank">Resize text</a></th> -->
+		<td><p>Image of text, except where the text is part of a logo</p></td>
+        <td>
+			<ol>
+				<li>Check that using text cannot achieve the same visual presentation and effect as images of text.</li>
+				<li>Check that the image of text can be visually customized to a user’s requirements.
+					<ul>
+						<li>For example, web content allows users to specify font, size, color, and background settings, and all images of text are then provided based on those settings.</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>image of letters in a particular font</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Graphic of "new" next to an article</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.4.5 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#images-of-text" target="_blank">Images of text</a></td>
+        <td>-</td>
+      </tr>
+      <tr>
+		<th scope="row">7.a Sensory Characterisitics</th>
+        <!-- <th scope="row">1.4.5 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#images-of-text" target="_blank">Images of text</a></th> -->
+		<td><p>Content that relies on color to convey meaning, indicate an action, prompt a response, distinguish a visual element, or identify errors.</p></td>
+        <td>
+			<p>Check that one or more of the following is true:</p>
+				<ul>
+					<li>The element using color to convey meaning also provides on-screen alternate text describing the color and/or the meaning conveyed by the color</li>
+					<li>The element using color to convey meaning also provides other visual differentiation (e.g., shape, position, size, underline) with a clear indication of its meaning</li>
+				</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>The red asterisk indicates required</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>An alert will be posted to the top right of the screen. An info msg will be on the top left.</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.4.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#use-of-color" target="_blank">Use of colour</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">7.b Sensory Characteristics</th>
+        <!-- <th scope="row">2.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#keyboard" target="_blank">Keyboard</a></th> -->
+		<td><p>Identify instructions for understanding and operating content that use sensory information to convey information. This may include references to shape, size, visual location, orientation, or sound.</p></td>
+        <td>
+			<ol>
+				<li>Check that the instructions contain additional information that allows it to be located, identified, and understood without any knowledge of its shape, size, or relative position. For instance:
+					<ul>
+						<li>To see your changes, select the round button labeled “Go”.</li>
+						<li>The links on the right, with the heading “Resources”, provide further information.</li>
+						<li>Select the lower-right [Cancel] button to close this session.</li>
+					</ul>
+				</li>
+				<li>Check that any auditory cues also provide programmatically determinable visual and/or textual cues. For instance:
+					<ul>
+						<li>At the sound of the beep and the appearance of the timer, begin the quiz.</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>The information titled "read now" is critical.</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>The information to the left is critical.</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#sensory-characteristics" target="_blank">Sensory characteristics</a></td>
+        <td>-</td>
+      </tr>
+      <tr>
+		<th scope="row">8. Contrast</th>
+        <!-- <th scope="row">2.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#no-keyboard-trap" target="_blank">No keyboard trap</a></th> -->
+		<td><p>All visible text AND images of text (except those noted in Limitations, Assumptions, or Exceptions above)</p></td>
+        <td>
+			<ol>
+				<li>Determine the <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef" target="_blank">contrast ratio</a> of foreground text and background.</li>
+				<li>Check that the contrast ratio is at least 4.5:1.</li>
+				<li>If the contrast ratio is less than 4.5:1, check that the ratio is at least 3:1 AND the font meets one of the following criteria:
+					<ul>
+						<li>At least 18 point (23.94 pixels)</li>
+						<li>At least 14 point (18.62 pixels) AND bold (at least 700 font weight)</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Regular text, 6.76 ratio: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Contrast_1.4.3_G18.Color_4.5.1.html" target="_blank">AK Color 4.5:1</a> - get on its own page</li>
+			<li>Large text 24px, 2.37 ratio: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Contrast_1.4.3_G145.Color_3.1.html" target="_blank">AK Color 3:1</a>  - get on its own page</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Regular text, 2.37 ratio: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Contrast_1.4.3_G18.Color_4.5.1.html" target="_blank">AK Color 4.5:1</a> - get on its own page</li>
+			<li>Regular text, 3&#60;ratio&#60;4.5</li>
+			<li>Large text 24px, 2.37 ratio: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Contrast_1.4.3_G145.Color_3.1.html" target="_blank">AK Color 3:1</a>  - get on its own page</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.4.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#contrast-minimum" target="_blank">Contrast (minimum)</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">9. Flashing</th>
+        <!-- <th scope="row">2.2.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#timing-adjustable" target="_blank">Timing adjustable</a></th> -->
+		<td><p>Visually identify content that flashes (excluding exception noted in Limitations, Assumptions, or Exceptions above).</p></td>
+        <td>
+			<ol>
+				<li>Determine the flashing frequency. If the flashing frequency is at or below 3Hz (three flashes in any one second period), no further testing is necessary.</li>
+				<li>If the content flashes above 3Hz or the frequency cannot be determined, check that it meets one of the following:
+					<ul>
+						<li>The combined, contiguous area that is flashing simultaneously within any 10 degree angle of view is less than the equivalent of the small safe area for flashing (i.e., less than 25% of a 10 degree viewing angle of the total screen size at intended viewing distance).</li>
+						<li>The opposing transitions that flash do not involve a saturated red AND
+							<ul>
+								<li>The darkest image’s relative luminance is above 0.80, or</li>
+								<li>The darkest image’s relative luminance is below 0.80 and the maximum change in relative luminance between the darkest image and the brightest image is less than 10%.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#three-flashes-or-below-threshold" target="_blank">Three flashes or below threshold</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">10.a Forms</th>
+        <td>
+			<ol>
+				<li>Find all form input components. Examples include text fields, radio buttons, checkboxes, read-only fields, and multi-select lists.</li>
+				<li>Find all instructions and cues (textual and graphical) that are related to form components/controls, including groupings, order of completion, special conditions or qualifiers, format instructions, etc.</li>
+			</ol>
+		</td>
+		<td><p>Check that the combination of the accessible name, accessible description, and other programmatic associations (e.g., table column and/or row associations) describes each input field and includes all relevant instructions and cues (textual and graphical). Reference <a href="https://www.w3.org/TR/html-aam-1.0/#input-type-text-input-type-password-input-type-search-input-type-tel-input-type-url-and-textarea-element" target="_blank">HTML Accessibility API Mappings 1.0</a> for details on techniques that contribute to the computation of the accessible name and accessible description.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Input type=text, Placeholder provided: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputText.Name.html" target="_blank">AK InputText</a> - get on its own page</li>
+			<li>Input type=text, Label for/id: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputText.Name.html" target="_blank">AK InputText</a> - get on its own page</li>
+			<li>Input type=text, Title: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputText.Name.html" target="_blank">AK InputText</a> - get on its own page</li>
+			<li>Input type=text, Aria-label: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputText.Name.html" target="_blank">AK InputText</a> - get on its own page</li>
+			<li>Input type=text, Aria-labelledby: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputText.Name.html" target="_blank">AK InputText</a> - get on its own page</li>
+			<li>Input type=text, Aria-described by only (no name): Scenario 7 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputText.Name.html" target="_blank">AK InputText</a> - get on its own page</li>
+			<li class="questionable>Input type=file with title: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputFile.Name.html" target="_blank">AK InputFileName</a> - get on its own page, Does this belong under 14. Buttons?</li>
+			<li class="questionable>Input type=file with aria-label: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputFile.Name.html" target="_blank">AK InputFileName</a> - get on its own page, Does this belong under 14. Buttons?</li>
+			<li>Input type=file with aria-labelledby: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputFile.Name.html" target="_blank">AK InputFileName</a> - get on its own page</li>
+			<li class="questionable">Input type=file with aria-describedby only: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputFile.Name.html" target="_blank">AK InputFileName</a> - get on its own page</li>
+			<li>Input type=password, label for/id: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputPassword.Name.html" target="_blank">AK InputPasswordName</a> - get on its own page</li>
+			<li>Input type=password, title: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputPassword.Name.html" target="_blank">AK InputPasswordName</a> - get on its own page</li>
+			<li>Input type=password, aria-label: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputPassword.Name.html" target="_blank">AK InputPasswordName</a> - get on its own page</li>
+			<li>Input type=password, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputPassword.Name.html" target="_blank">AK InputPasswordName</a> - get on its own page</li>
+			<li class="questionable">Input type=password, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputPassword.Name.html" target="_blank">AK InputPasswordName</a> - get on its own page</li>
+			<li>Textarea, label for/id: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.TextArea.Name.html" target="_blank">AK Textarea</a> - get on its own page</li>
+			<li>Textarea, aria-label: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.TextArea.Name.html" target="_blank">AK Textarea</a> - get on its own page</li>
+			<li>Textarea, title: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.TextArea.Name.html" target="_blank">AK Textarea</a> - get on its own page</li>
+			<li>Textarea, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.TextArea.Name.html" target="_blank">AK Textarea</a> - get on its own page</li>
+			<li class="questionable">Textarea, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.TextArea.Name.html" target="_blank">AK Textarea</a> - get on its own page</li>
+			<li>Input type=checkbox, label for/id: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputCheckBox.Name.html" target="_blank">AK InputCheckBoxName</a> - get on its own page</li>
+			<li>Input type=checkbox, title: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputCheckBox.Name.html" target="_blank">AK InputCheckBoxName</a> - get on its own page</li>
+			<li>Input type=checkbox, aria-label: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputCheckBox.Name.html" target="_blank">AK InputCheckBoxName</a> - get on its own page</li>
+			<li>Input type=checkbox, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputCheckBox.Name.html" target="_blank">AK InputCheckBoxName</a> - get on its own page</li>
+			<li class="questionable">Input type=checkbox, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputCheckBox.Name.html" target="_blank">AK InputCheckBoxName</a> - get on its own page</li>
+			<li>Input type=checkbox with question in fieldset/label</li>
+			<li>Input type=radiobutton, label for/id: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputRadioButton.Name.html" target="_blank">AK InputRadioButtonName</a> - get on its own page</li>
+			<li>Input type=radiobutton, title: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputRadioButton.Name.html" target="_blank">AK InputRadioButtonName</a> - get on its own page</li>
+			<li>Input type=radiobutton, aria-label: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputRadioButton.Name.html" target="_blank">AK InputRadioButtonName</a> - get on its own page</li>
+			<li>Input type=radiobutton, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputRadioButton.Name.html" target="_blank">AK InputRadioButtonName</a> - get on its own page</li>
+			<li class="questionable">Input type=radiobutton, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputRadioButton.Name.html" target="_blank">AK InputRadioButtonName</a> - get on its own page</li>
+			<li>Input type=radiobutton with question in aria-label</li>
+			<li>Input type=radiobuttons with question ID in aria-labelledby</li>
+			<li>Input type=select, label for/id: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
+			<li>Input type=select, title: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
+			<li>Input type=select, aria-label: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
+			<li>Input type=select, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
+			<li class="questionable">Input type=select, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
+			<li>div role=textbox, aria-labelledby: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_ARIA-InputFieldName.html" target="_blank">AK AriaInputFieldName</a> - get on its own page</li>
+			<li>Input type=text, fieldset/legend, label (nested): 1.8 from <a href="ANDI_testpages/andi_test1.html" target="_blank">ANDI
+		_testpages 1</a> - get on its own page</li>
+			<li>Input type=text, aria-label, readonly: 1.1 from <a href="ANDI_testpages/andi_test3.html" target="_blank">ANDI
+		_testpages 3</a> - get on its own page</li>
+			<li>Input type=text, aria-label, required: 1.2 from <a href="ANDI_testpages/andi_test3.html" target="_blank">ANDI
+		_testpages 3</a> - get on its own page, passes 10a accnamedesc, fails 10e no visible label</li>
+			<li>Input type=text, aria-label, aria-required=true: 1.3 from <a href="ANDI_testpages/andi_test3.html" target="_blank">ANDI
+		_testpages 3</a> - get on its own page, passes 10a accnamedesc, fails 10e no visible label</li>
+		</ol>
+			<li>&#60;textarea&#62;, aria-label, title: 11.22 from <a href="ANDI_testpages/andi_test1.html" target="_blank">ANDI
+		_testpages 1</a> - get on its own page, passes 10a accnamedesc, fails 10e no visible label</li>
+		<p>Fail</p>
+		<ol>
+			<li class="questionable">Should we include test cases to test correct accessible name and accdesc computation?</li>
+			<li>Input type=text, No name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputText.Name.html" target="_blank">AK InputText</a> - get on its own page</li>
+			<li>Input type=text, Aria-labelledby with no matching ID</li>
+			<li>Input type=text, Label for/no matching ID: <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H44.LabelForBoundToNonExistentID.html" target="_blank">AK LabelForBoundToNonExistentID</a></li>
+			<li>Input type=password with alt: 5.15 from <a href="andi_testpages/andi_test1.html" target="_blank">andi_test1</a> - get on its own page</li>
+			<li>Input type=text, label for/ID assigned twice: <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H93.MultiLabelFor.html" target="_blank">AK MultiLabelFor</a></li>
+			<li>Input type=radiobutton missing question in aria-label</li>			
+			<li>Input type=file no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputFile.Name.html" target="_blank">AK InputFileName</a> - get on its own page</li>
+			<li>Input type=password, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputPassword.Name.html" target="_blank">AK InputPasswordName</a> - get on its own page</li>
+			<li>Textarea, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.TextArea.Name.html" target="_blank">AK Textarea</a> - get on its own page</li>
+			<li>Input type=checkbox, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputCheckBox.Name.html" target="_blank">AK InputCheckBoxName</a> - get on its own page</li>
+			<li>Input type=checkbox missing question ID in aria-labelledby</li>
+			<li>Input type=radiobutton, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.InputRadioButton.Name.html" target="_blank">AK InputRadioButtonName</a> - get on its own page</li>
+			<li>Input type=select, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_H91.Select.Name.html" target="_blank">AK SelectName</a> - get on its own page</li>
+			<li>Input type=textfocusable, with aria-hidden: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_1.3.1_HiddenLabel_F68.Hidden.html" target="_blank">AK F68Hidden</a> - get on its own page</li>
+			<li>div role=textbox, no label: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_4.1.2_ARIA-InputFieldName.html" target="_blank">AK AriaInputFieldName</a> - get on its own page</li>
+			<li>Input type=text, duplicate for attributes: 2.1 from <a href="andi_testpages/andi_test3.html" target="_blank">andi_test3</a> - get on its own page</li>
+			
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li>Image</li>
+			<li>Text with aria-hidden: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Forms_1.3.1_HiddenLabel_F68.Hidden.html" target="_blank">AK F68Hidden</a> - get on its own page</li>
+		</ol>
+		</td>
+        <td>1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+      </tr>
+      <tr>
+		<th scope="row">10.b Forms</th>
+        <!-- <th scope="row">2.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#three-flashes-or-below-threshold" target="_blank">Three flashes or below threshold</a></th> -->
+		<td>
+			<ol>
+				<li>Find all form input components. Examples include text fields, radio buttons, checkboxes, multi-select lists.</li>
+				<li>Find all instructions and cues (textual and graphical) that are related to form components/controls, including groupings, order of completion, special conditions or qualifiers, format instructions, etc.</li>
+			</ol>
+		</td>
+        <td><p>Check that provided labels and/or instructions for each form input inform users what input data is expected and, if applicable, what format is required.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>3 input fields for mm/dd/yyyy, labeled month, date, year</li>
+			<li>2 visible labeled Telephone fields, one for work, one for home</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Date: 3 fields all labeled "date"</li>
+			<li>SSN: 3 fields, all labeled "SSN"</li>
+			<li>Input type=text, aria-label, required: 1.2 from <a href="ANDI_testpages/andi_test3.html" target="_blank">ANDI
+		_testpages 3</a> - get on its own page, passes 10a accnamedesc, fails 10e no visible label</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.4.6 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#headings-and-labels" target="_blank">Headings and labels</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">10.c Forms</th>
+        <!-- <th scope="row">2.4.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#bypass-blocks" target="_blank">Bypass blocks</a></th> -->
+		<td><p>All active form components.</p></td>
+        <td>
+				<ol>
+					<li>Enter data in all form fields, and exit (tab out of) the field</li>
+					<li>Change selections and/or values for form controls, such as radio buttons, check boxes, select lists, etc.</li>
+					<li>Check that navigating away from a field and/or changing field values/selections (e.g., entering data in a text field, changing a radio button selection) does NOT initiate a change of context unless the user has been advised of the behavior before using the component. Examples of a change of context could include:
+						<ul>
+							<li>Forms submitted automatically when exiting the field</li>
+							<li>Forms submitted automatically when exiting the last field in a form</li>
+							<li>New windows launched when changing a radio button selection</li>
+							<li>Focus is changed to another component when a select list item is selected</li>
+						</ul>
+					</li>
+				</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Javascript alert pop up on select form: 5.2 from <a href="ANDI_testpages/andi_test3.html" target="_blank">andi_test3.html</a> - get on its own page, add label for real usecase</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.2.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#on-input" target="_blank">On Input</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">10.d Forms</th>
+        <!-- <th scope="row">2.4.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#focus-order" target="_blank">Focus order</a></th> -->
+		<td><p>Input fields with automatic error detection and notification.</p></td>
+        <td>
+			<ol>
+				<li>Enter incorrect values in input fields in order to trigger automatic error detection that results in error notifications. Examples include but are not limited to:
+					<ul>
+						<li>required fields</li>
+						<li>date (format)</li>
+						<li>state (abbreviations in an address)</li>
+						<li>password</li>
+					</ul>
+				</li>
+				<li>If an input error is automatically detected, check that the error notification meets all of the following:
+					<ul>
+						<li>the user is made aware of the error (whether immediately upon shifting focus away from the item in error or when trying to submit the form), and</li>
+						<li>the error is described to the user in text, and</li>
+						<li>the item that is in error is identified in text.</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#error-identification" target="_blank">Error identification</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">10.e Forms</th>
+        <!-- <th scope="row">2.4.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#page-titled" target="_blank">Page titled</a></th> -->
+		<td>
+			<ol>
+				<li>Find all form input components. Examples include text fields, radio buttons, checkboxes, multi-select lists.</li>
+				<li>Find all instructions and cues (textual and graphical) that are related to form components/controls, including groupings, order of completion, special conditions or qualifiers, format instructions, etc.</li>
+			</ol>
+		</td>
+        <td><p>Check that each form input has label(s) or instructions.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>form field with no visible label</li>
+			<li>Input type=text, aria-label, required: 1.2 from <a href="ANDI_testpages/andi_test3.html" target="_blank">ANDI
+		_testpages 3</a> - get on its own page, passes 10a accnamedesc, fails 10e no visible label</li>
+			<li>Input type=text, aria-label, aria-required=true: 1.3 from <a href="ANDI_testpages/andi_test3.html" target="_blank">ANDI
+		_testpages 3</a> - get on its own page, passes 10a accnamedesc, fails 10e no visible label</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.3.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#labels-or-instructions" target="_blank">Labels or instructions</a></td>
+        <td>-</td>
+      </tr>
+      <tr>
+		<th scope="row">10.f Forms</th>
+        <!-- <th scope="row">2.4.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#link-purpose-in-context" target="_blank">Link purpose (in context)</a></th> -->
+		<td><p>Input fields with automatic error detection and notification.</p></td>
+        <td>
+			<ol>
+				<li>Enter incorrect values in input fields in order to trigger automatic error detection that result in error notifications. Examples include but are not limited to:
+					<ul>
+						<li>required fields</li>
+						<li>date (format)</li>
+						<li>state (abbreviations in an address)</li>
+						<li>password</li>
+					</ul>
+				</li>
+				<li>Review error notifications provided.</li>
+				<li>Check that additional guidance (e.g., suggestion for corrected input, guidance on how to correct the user’s input) is provided on how to correct errors for form fields that would not jeopardize the security or purpose of the content.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.3.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#error-suggestion" target="_blank">Error suggestion</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">10.g Forms</th>
+        <!-- <th scope="row">2.4.5 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#multiple-ways" target="_blank">Multiple ways</a></th> -->
+		<td><p>Pages that causes legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses.</p></td>
+        <td>
+			<ol>
+				<li>Complete the form fields necessary to submit. Include errors.</li>
+				<li>Check that at least one of the following is true:
+					<ul>
+						<li>Reversible: Submissions are reversible.</li>
+						<li>Checked: Data entered by the user is checked for input errors and the user is provided an opportunity to correct them.</li>
+						<li>Confirmed: A mechanism is available for reviewing, confirming, and correcting information before finalizing the submission.</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.3.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#error-prevention-legal-financial-data" target="_blank">Error prevention (legal, financial, data)</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">11. Page Titles</th>
+        <!-- <th scope="row">2.4.5 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#multiple-ways" target="_blank">Multiple ways</a></th> -->
+		<td><p>Page &#60;title&#62; element for the page.</p></td>
+        <td>
+			<ol>
+				<li>Check that a page &#60;title&#62; element is defined for the page.</li>
+				<li>Check that the Page Title identifies the contents or purpose of the Web page.
+					<ul>
+						<li>For pages within a Web site, check that the Page Title can be used to distinguish among the pages.</li>
+						<li>For documents or Web applications, the name of the document or Web application would be sufficient to describe the purpose of the page.</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li><a href="http://coc.kciprojects.com/ooc/stubs/PageTitles_2.4.2_NoTitleElement.html" target="_blank">AK NoTitleElement</a></li>
+			<li><a href="http://coc.kciprojects.com/ooc/stubs/PageTitles_2.4.2_EmptyTitle.html" target="_blank">AK EmptyTitle</a></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.4.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#page-titled" target="_blank">Page titled</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">12.a Tables</th>
+        <!-- <th scope="row">2.4.6 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#headings-and-labels" target="_blank">Headings and labels</a></th> -->
+		<td><p>Data Tables</p>
+			<p>All content/data visually presented in a table with column and/or row headers where the content, when linearized, is not in a meaningful sequence.</p>
+			<p>Note: Linearization of table content is the presentation of a table’s two-dimensional content in one-dimensional order of the content in the source, beginning with the first cell in the first row and ending with the last cell in the last row, from left to right, top to bottom.</p>
+		</td>	
+        <td>
+			<ol>
+				<li>Table: Check that each data table has programmatic markup to identify it as a table using one of the following techniques:
+					<ul>
+						<li>HTML &#60;table&#62;</li>
+						<li>ARIA role=”table”</li>
+						<li>ARIA role=”grid”</li>
+						<li><p>NOTE: according to HTML5 specifications, the &#60;table&#62; element and associated elements and attributes may not be used in combination with ARIA role=”table” and associated roles and attributes. If a table combines these techniques, it fails this test. ARIA role=”grid”, on the other hand, may be used on a &#60;table&#62; element.</p>
+						<p>For example, if an author applies the grid role to an HTML table element, the author does not need to apply the row and gridcell roles to the descendant HTML &#60;tr&#62; and &#60;td&#62; elements because the user agent will automatically make the appropriate translations. When the author is reusing a native host language table element and needs a gridcell element to span multiple rows or columns, the author SHOULD apply the appropriate host language attributes instead of WAI-ARIA aria-rowspan or aria-colspan properties (from <a href="https://www.w3.org/TR/wai-aria-1.1/#grid" target="_blank">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a>).</p>							
+						</li>
+					</ul>
+				</li>
+				<li>Check that an ARIA role=”presentation” is NOT assigned to a data &#60;table&#62; element.</li>
+				<li>Table data cell: Check that each data cell uses only one of the following methods to identify it as a data cell within a table row depending on the technique identified in the first step:
+					<ul>
+						<li>For HTML &#60;table&#62;: &#60;td&#62; for the cell, which must be within a &#60;tr&#62; row.</li>
+						<li>For ARIA role=”table”: ARIA role=”cell”, which must be within an ARIA role=”row”.</li>
+						<li>For ARIA role=”grid”: ARIA role=”gridcell”, which must be within an ARIA role=”row” (if the ARIA grid is not making use of the native HTML &#60;table&#62; element and structure).</li>
+					</ul>
+				</li>
+				<li>Header cells and data cell association: Identify all column and row headers for each data cell. Check that all data cells are programmatically associated with relevant headers using one of the following techniques:
+					<ul>
+						<li>For a simple HTML &#60;table&#62;, with all headers in the first row OR column, each header cell can be marked up with &#60;th&#62; without additional attributes.</li>
+						<li>For any HTML &#60;table&#62;, header cells can be marked up with &#60;th scope=&#62; if all data cells that follow the header belong to the header. In HTML4, &#60;td scope&#62; is supported. In HTML5, &#60;td scope&#62; is not supported so all header cells must be &#60;th&#62;. Acceptable values for scope are col&vert;row&vert;colgroup&vert;rowgroup. The scope only applies to cells that occur after the header cell(s) in the reading order.</li>
+					</ul>
+				</li>
+				<li>For any HTML &#60;table&#62;, data cells can be associated to a header cell by including the header cell’s unique id value &#60;td headers=&#62;.
+					<ul>
+						<li>Data cells must refer to the id(s) of all relevant header cells via the headers attribute in order for the row and column headers to be properly associated.</li>
+						<li>The order of the IDs referenced in the headers attribute are consistent and in a meaningful sequence.</li>
+					</ul>
+				</li>
+				<li>For any HTML &#60;table&#62; that uses BOTH &#60;th scope=&#62; AND refers to header IDs using &#60;td headers=&#62; attributes in the same table, any data cell with a headers= reference will override any scope= attributes for associated table headers for that particular data cell. Therefore, data cells with a headers= reference, must identify all relevant headers, independent from and regardless of scope= attributes in associated headers.</li>
+				<li>For ARIA role=”table”: each column header must have role=”columnheader” and each row header must have role=”rowheader”.</li>
+				<li>For ARIA role=”grid”: each column header must have role=”columnheader” and each row header must have role=”rowheader” (if the ARIA grid is not making use of the native HTML &#60;table&#62; element and structure).</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Simple table that has the headers in the first row that use the TH elements without scope: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_2headers-No-Valid-Header-Coding_H43.H63.html" target="_blank">AK NoValideHeaderCodingH43</a></li>
+			<li>Simple table that has the headers in the first column that use the TH elements without scope</li>
+			<li>2 Colgroup in a table: Table 3 from <a href="Andi_testpages/andi_testpages/andi_test5.html" target="_blank">andi_test5.hmtl</a> - get on its own page </li>
+			<li>Rowgroup, scope = row: Table 20 from <a href="Andi_testpages/andi_testpages/andi_test5.html" target="_blank">andi_test5.hmtl</a> - get on its own page </li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Simple table with row and col headers using only th: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_2headers-No-Valid-Header-Coding_H43.H63.html" target="_blank">AK NoValideHeaderCodingH43</a></li>
+			<li>Complex table data cell no headers attribute <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_H43.MissingHeadersAttr.html" target="_blank">AK MissingHeadersAttr</a></li>
+			<li>Complex table data cell headers attribute missing ID of a col header<a href="http://coc.kciprojects.com/ooc/stubs/Tables_3.1.2_H43_IncorrectHeadersAttribute.html" target="_blank">AK IncorrectHeadersAttribute</a></li>
+			<li>Complex table header cell missing ID <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1-H43.MissingHeaderIds.html" target="_blank">AK MissingHeaderIds</a></li>
+			<li>Data table cell headers attribute references a different data table header: <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_HeadersInSameTable.html" target="_blank">AK HeadersInSameTable</a></li>
+			<li>Complex table with colgroup and column header: Table 4 from <a href="Andi_testpages/andi_testpages/andi_test5.html" target="_blank">andi_test5.hmtl</a> - get on its own page</li>
+			<li>Rowspans and colspan </li>
+			<li>Grid with cell not contained by role=row: Table 24 from <a href="Andi_testpages/andi_testpages/andi_test5.html" target="_blank">andi_test5.hmtl</a> - get on its own page </li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">12.b Tables</th>
+        <!-- <th scope="row">2.4.7 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#focus-visible" target="_blank">Focus visible</a></th> -->
+		<td><p>Layout Tables</p>
+			<p>All content/data visually presented in a table with column and/or row headers where the content, when linearized, is in a meaningful sequence.</p>
+			<p>Note: Linearization of table content is the presentation of a table’s two-dimensional content in one-dimensional order of the content in the source, beginning with the first cell in the first row and ending with the last cell in the last row, from left to right, top to bottom.</p>
+			
+		</td>
+        <td>
+			<p>Check that tables used purely for layout purposes:</p>
+			<ol>
+				<li>Do NOT designate the layout as a table using ARIA role=”table” and associated ARIA table attributes.</li>
+				<li>If the table does not have role=”presentation”, do NOT include table structure and relationship elements and/or associated attributes (i.e., &#60;th&#62;, summary= (HTML4), &#60;caption&#62;, scope=, and/or headers=).</li>
+				<li>Do NOT identify column or row headers using role=”columnheader” or role=”rowheader” in an ARIA grid (where the data grid is identified using role=”grid”).</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Layout table with aria role="presentation"</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Layout table with aria role="table"</li>
+			<li>Layout table uses caption element: <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_H39.LayoutWithCaptions.html" target="_blank">AK LayoutWithCaptions</a>
+			<li>Layout table uses summary element: <a href="http://coc.kciprojects.com/ooc/stubs/Tables_1.3.1_H73.LayoutWithSummary.html" target="_blank">AK LayoutWithSummary</a>
+			<li>Layout table with th and caption: Table 15 from <a href="Andi_testpages/andi_testpages/andi_test5.html" target="_blank">andi_test5.hmtl</a> - get on its own page</li>
+			<li>Layout table with scope</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">13.a Content Structure</th>
+        <!-- <th scope="row">2.4.7 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#focus-visible" target="_blank">Focus visible</a></th> -->
+		<td><p>Visually apparent headings, which denote sections of content. Headings are often in a larger, bolded font separated from paragraphs by extra spacing (though not always). Note the hierarchy and structure of each heading with respect to other headings on the page or screen.</p>
+		</td>
+        <td><p>Check that each heading describes the topic or purpose of its content.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.4.6 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#headings-and-labels" target="_blank">Headings and labels</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">13.b Content Structure</th>
+        <!-- <th scope="row">3.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#language-of-page" target="_blank">Language of page</a></th> -->
+		<td><p>Visually apparent headings, which denote sections of content. Headings are often in a larger, bolded font separated from paragraphs by extra spacing (though not always). Note the hierarchy and structure of each heading with respect to other headings on the page.</p></td>
+        <td>
+			<p>Check that all visual headings are programmatically determinable and that programmatic heading levels logically match the visual heading presentation within the heading structure:</p>
+				<ul>
+					<li>The most important heading(s) should have the highest priority level. For example, &#60;h1&#62; is a higher level than &#60;h2#62;, which is higher than &#60;h3&#62;.</li>
+					<li>Headings with an equal or higher level start a new section; headings with a lower level start new subsections that are part of the higher leveled section.</li>
+					<li>HTML or ARIA programmatically identify each heading. When both are used, heading levels must match.
+						<ul>
+							<li><a href="https://www.w3.org/TR/WCAG20-TECHS/H42.html" target="_blank">H42</a>: each heading is marked with &#60;h1&#62; to &#60;h6&#62;.</li>
+							<li><a href="https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html" target="_blank">ARIA12</a>: each heading is marked with role=”heading” and aria-level=”#”. The default heading level is “2” when none is specified.</li>
+						</ul>
+					</li>
+				</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>3 Visual headings using a styled P: <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_HeadingsCreatedByFormattingOnly.html" target="_blank">AK HeadingsCreatedByFormattingOnly</a></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">13.c Content Structure</th>
+        <!-- <th scope="row">3.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#language-of-parts" target="_blank">Language of parts</a></th> -->
+		<td><p>Programmatically determined headings: &#60;h1&#62; to &#60;h6&#62; or ARIA role=”heading”.</p></td>
+        <td><p>Check that each programmatically determinable heading is also serving as a visual heading on the page. Content that is not a visual heading cannot have a role of heading (for example, heading markup should not be used for emphasis on an element that is not a heading for content after it).</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Empty heading h5: <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_H42.EmptyHeading.html" target="_blank">AK EmptyHeading</a></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">13.d Content Structure</th>
+        <!-- <th scope="row">3.2.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#on-focus" target="_blank">On focus</a></th> -->
+		<td>
+			<p>Visually apparent lists. For each list, determine if it appears to be ordered, unordered, or a description list.</p>
+				<ul>
+					<li>Ordered lists are numbered sequentially and, if necessary, hierarchically (e.g., 1, 2, 2a, 2ai, etc.) and are used where sequence or the ability to reference specific items by number/letter is important.</li>
+					<li>Unordered lists are not numbered and are used where sequence or the ability to reference specific items by number/letter is not important.</li>
+					<li>Description lists &#60;dl&#62; are used to group terms with their descriptions.</li>
+				</ul>
+		</td>
+        <td><p>For each visually apparent list:</p>
+			<ol>
+				<li>Check that content that has the visual appearance of a list (with or without bullets) that has no special order or sequence is marked as an unordered list.</li>
+				<li>Check that content that has the visual appearance of a numbered list is marked as an ordered list.</li>
+				<li>Check that content is marked as a description list when terms and their descriptions are presented in the form of a list.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Ordered list: Scneario 2 of <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_Lists.html" target="_blank">AK ContentStructureLists</a></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Bullet list not contained by OL or UL: Scenario 1 of <a href="http://coc.kciprojects.com/ooc/stubs/ContentStructure_1.3.1_Lists.html" target="_blank">AK ContentStructureLists</a></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">14. Links and Buttons</th>
+        <!-- <th scope="row">3.2.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#on-input" target="_blank">On Input</a></th> -->
+		<td><p>All links and buttons, including those that are scripted elements and assigned a role of a link and role of a button.</p></td>
+        <td><p>Check that the purpose of each link/button can be determined from any combination of the link text, <a href="https://www.w3.org/TR/html-aam-1.0/#accessible-name-and-description-computation" target="_blank">accessible name, accessible description</a>, and/or preceding page context (same paragraph, list, or table cell as the link or in a table header cell that is associated with the table cell that contains the link).</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Link with innerText: Scenario 5 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - get on its own page</li>
+			<li class="questionable">Link with title: Scenario 6 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li class="questionable">Link with aria-label: Scenario 7 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - (weird use case) needs a visible label, get on its own page</li>
+			<li class="questionable">Link with aria-labelledby: Scenario 8 of <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - (weird use case) get on its own page</li>
+			<li class="questionable">link with aria-describedby only: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - (weird use case) Is combo accname+accdesc acceptable? get on its own page</li>
+			<li>Link with innerText: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - get on its own page</li>
+			<li class="questionable">Link with title: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li class="questionable">Link with aria-label: Scenario5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li class="questionable">Link iwth aria-labelledby: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - needs a visible label (weird use case), get on its own page</li>
+			<li>&#60;Button&#62;, with innerText: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.Button.Name.html" target="_blank">AK LinksAndButtonsButtonName</a> - get on its own page</li>
+			<li>role=button, innerText: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>role=button, title: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>role=button, aria-label: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>role=button, aria-labelledby: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li class="questionable">role=button, aria-describedby only: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>input type=submit, no other attributes: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>input type=submit, value: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>input type=submit, aria-label, value: 8.2 from <a href="ANDI_testpages/andi_test3.html" target="_blank">andi_testpages3</a> - get on its own page</li>
+			<li>input type=reset, no other attributes: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>input type=reset, value: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>Role=link</li>	
+			<li>Link purpose determinable from list container</li>
+			<li>Link purpose determinable from preceding paragraph container "more"</li>
+			<li>Link purpose determinable from table cell container and header</li>
+			<li>Image Link, alt on img: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, title on img: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-label on img: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-labelledby on img: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, title on &#60;a&#62;: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-label on &#60;a&#62;: Scenario 7 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Image Link, aria-labelledby on &#60;a&#62;: Scenario 8 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li class="questionable">Image Link, only aria-describedby on &#60;a&#62;: Scenario 9 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, passes Baseline 6a Meaningful Images and Baseline 14 Links </li>
+			<li>Input type=image, alt on input: Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, title on input: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-label on input: Scenario 4 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>Input type=image, aria-labelledby on input: Scenario 5 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li class="questionable">Input type=image, only aria-describedby on input: Scenario 6 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputImage.Name.html" target="_blank">AK InputImageName</a> - get on its own page, passes 6a. Meaningful Image and 14. Buttons</li>
+			<li>&#60;Button&#62;, aria-label, innerText: 9.2 from <a href="ANDI_testpages/andi_test1.html" target="_blank">andi_testpages1</a> - get on its own page</li>
+			<li>&#60;Button&#62;, aria-label, aria-disabled="true": 1.8 from <a href="ANDI_testpages/andi_test3.html" target="_blank">andi_testpages3</a> - get on its own page</li>
+			<li class="questionable">Input type=file, aria-label, aria-required: 1.10 from <a href="ANDI_testpages/andi_test3.html" target="_blank">andi_testpages3</a> - get on its own page, does this belong under 10a. Forms?</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Link with no accname: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - add a visible link for purpose, get on its own page</li>
+			<li>Link with incomplete accname "tel:": Scenario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - add a visible tel number, get on its own page</li>
+			<li>Link with incomplete accname "mailto:": Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithNoContent_H91.A.html" target="_blank">AK LinkWithNoContentA</a> - add a visible email address, get on its own page</li>
+			<li>Link with no accname, empty href: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - add a visible link for purpose, get on its own page</li>
+			<li class="questionable">Link with empty href, aria-describedby only: Scenario 3 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - Is combo accname+accdesc acceptable? add a visible link for purpose, get on its own page</li>
+			<li>&#60;Button&#62;, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.Button.Name.html" target="_blank">AK LinksAndButtonsButtonName</a> - no visible label, get on its own page</li>
+			<li>role=button, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.RoleButtonLi.Name.html" target="_blank">AK LinkAndButtonsRoleButtonLiName</a> - get on its own page</li>
+			<li>input type=button, no accname: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_4.1.2_H91.InputButton.Name.html" target="_blank">AK InputButtonName</a> - get on its own page</li>
+			<li>Image Link, no acc name: Scenario 1 from <a href="http://coc.kciprojects.com/ooc/stubs/LinksAndButtons_1.1.1_H30.2.ImageLinks.html" target="_blank">AK ImageLinks</a> - get on its own page, also fails 1.1.1, Baseline 6 Images</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li class="questionable">&#60;a&#62; with no href, no label: Scneario 2 from <a href="http://coc.kciprojects.com/ooc/stubs/LinkWithEmptyLinkContent_H91.A.html" target="_blank">AK LinkWithEmptyContentA</a> - ANDI didn't find the link, AK marked this as failing, get on its own page</li>
+			<li>not a link or button</li>
+			<li>&#60;Button&#62;, aria-label,disabled: 1.9 from <a href="/ANDI_testpages/andi_test3.html#" target="_blank">andi_testpages3</a> - get on its own page</li>
+		</ol>
+		</td>
+        <td>2.4.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#link-purpose-in-context" target="_blank">Link purpose (in context)</a></td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">15.a Language</th>
+        <!-- <th scope="row">3.2.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#consistent-navigation" target="_blank">Consistent navigation</a></th> -->
+		<td><p>Pages with text (including text alternatives).</p></td>
+        <td>
+			<ol>
+				<li>Identify the default human language of the page by reviewing the page content. The default human language of the page is the language in which most of the content is presented.</li>
+				<li>Check that the lang attribute is defined on the &#60;html&#62; tag for the page.</li>
+				<li>Check that the value of the lang attribute matches the determined default human language for the page.
+					<ol>
+						<li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+						<li>The primary language subtag must conform to the Internet Assigned Numbers Authority’s <a href="http://www.iana.org/assignments/language-subtag-registry" target="_blank">IANA Language subtag registry</a>.</li>
+					</ol>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Page with no lang on hmtl tag: <a href="http://coc.kciprojects.com/ooc/stubs/Language_3.1.1_H57.LanguageTag.html" target="_blank">AK LanguageTag</a></li>
+			<li>Page has lang attribute, invalid lang code: <a href="http://coc.kciprojects.com/ooc/stubs/Language_3.1.1_H57.MainLanguageCodeInvalid.html" target="_blank">AK MainLanguageCodeInvalid</a></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#language-of-page" target="_blank">Language of page</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">15.b Language</th>
+        <!-- <th scope="row">3.2.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#consistent-identification" target="_blank">Consistent identification</a></th> -->
+		<td><p>Text content that differs from the default human language of the page including alternative text for non-text content.</p></td>
+        <td>
+			<ol>
+				<li>Identify the human language of the text content that differs from the default human language of the page.</li>
+				<li>Check that the lang attribute is specified for any HTML element that contains a content segment that differs from the default human language of the page. Note: An element without a set language inherits its language attribute from parent elements.</li>
+				<li>Check that the value of the lang attribute is correctly defined for the content segment.
+					<ol>
+						<li>The primary language subtag is the first 2 or 3 character code in the value of the lang attribute. (Do not test additional language specifications that may follow the primary language subtag.)</li>
+						<li>The primary language subtag must conform to the Internet Assigned Numbers Authority’s <a href="http://www.iana.org/assignments/language-subtag-registry" target="_blank">IANA Language subtag registry</a>.</li>
+					</ol>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Spanish segment not identified on English page: <a href="http://coc.kciprojects.com/ooc/stubs/Language_3.1.1_H58.LanguageContentSegment.html" target="_blank">AK LanguageContentSegment</a> </li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>3.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#language-of-parts" target="_blank">Language of parts</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">16.a Audio-only and Video-only</th>
+        <!-- <th scope="row">3.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#error-identification" target="_blank">Error identification</a></th> -->
+		<td><p>Pre-recorded audio-only content.</p></td>
+        <td>
+			<ol>
+				<li>Check that the content provides transcript(s) for audio-only content.</li>
+				<li>Check that the transcript is text (i.e., an image of a transcript would not be sufficient to pass this test).</li>
+				<li>Play the audio-only content entirely.</li>
+				<li>Check that the information in the transcript is an accurate and complete representation of the audio-only content and includes relevant sounds in addition to dialogue, such as doors banging, sirens wailing, identification of speakers in dialogue, etc.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.2.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-only-and-video-only-prerecorded" target="_blank">Audio-only and video only (prerecorded)</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">16.b Audio-only and Video-only</th>
+        <!-- <th scope="row">3.3.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#labels-or-instructions" target="_blank">Labels or instructions</a></th> -->
+		<td><p>Pre-recorded video-only content.</p></td>
+        <td>
+			<ol>
+				<li>Check that all video-only content information is also available through a text alternative (e.g., text that provides description of video content and actions) or an audio track that describes the video content.</li>
+				<li>View the video-only content while referring to the alternative.</li>
+				<li>Check that the information in the alternative includes the same information that the video-only presentation displays (e.g., if the video includes multiple characters, the alternative must identify which character is associated with each depicted action).</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.2.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-only-and-video-only-prerecorded" target="_blank">Audio-only and video only (prerecorded)</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">17.a Synchronized Media</th>
+        <!-- <th scope="row">3.3.3 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#error-suggestion" target="_blank">Error suggestion</a></th> -->
+		<td><p>Media player that displays video with synchronized audio.</p></td>
+        <td><p>Check that user controls for the selection of captions and audio descriptions are provided.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>Section 508 503.4 <a href="https://www.federalregister.gov/d/2017-00395/p-630" target="_blank">User Controls for Captions and Audio Description</a> </td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">17.b Synchronized Media</th>
+        <!-- <th scope="row">3.3.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#error-prevention-legal-financial-data" target="_blank">Error prevention (legal, financial, data)</a></th> -->
+		<td><p>Media player that displays video with synchronized audio and has volume adjustment controls.</p></td>
+        <td><p>Check that user controls for the selection of captions are at the same menu level as the user controls for volume adjustment or program selection.</p></td>
+        <td>-</td>
+        <td>Section 508 503.4.1 <a href="https://www.federalregister.gov/d/2017-00395/p-631" target="_blank">Caption Controls</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">17.c Synchronized Media</th>
+        <!-- <th scope="row">4.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#parsing" target="_blank">Parsing</a></th> -->
+		<td><p>Media player that displays video with synchronized audio and has program selection controls.</p></td>
+        <td><p>Check that user controls for the selection of audio descriptions are at the same menu level as the user controls for volume or program selection.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>Section 508 503.4.2 <a href="https://www.federalregister.gov/d/2017-00395/p-632" target="_blank">Audio Description Controls</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">17.d Synchronized Media</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Pre-recorded synchronized multimedia.</p></td>
+        <td>
+			<ol>
+				<li>Enable captions through multimedia player functions and play the media. If a separate media file with captions is provided, test that file.</li>
+				<li>Check that captions are accurate and include all dialogue and equivalents for non-dialogue audio information needed to understand the program content, including sound effects, music, laughter, speaker identification and location.
+					<ol>
+						<li>Listen to the audio of the entire synchronized media.</li>
+						<li>Compare the audio to the captions for accuracy, time-synchronization, and equivalence.</li>
+					</ol>
+				</li>
+				<li>Check that the captions do not obscure or obstruct relevant information in the video.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.2.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#captions-prerecorded" target="_blank">Captions (prerecorded)</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">17.e Synchronized Media</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Pre-recorded synchronized multimedia.</p></td>
+        <td>
+			<ol>
+				<li>Enable audio descriptions through multimedia player functions and play the media. If a separate media file with audio descriptions is provided, test that file.</li>
+				<li>Check that the audio (with audio descriptions enabled) adequately describes important visual content in the media, including information about actions, characters, scene changes, on-screen text, and other visual content.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.2.5 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-description-prerecorded" target="_blank">Audio description (precorded)</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">17.f Synchronized Media</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Live synchronized multimedia.</p></td>
+        <td>
+			<ol>
+				<li>Enable captions through multimedia player functions and start the live session.</li>
+				<li>Check that provided captions include dialogue and important sounds.
+					<ol>
+						<li>Listen to the audio of the entire synchronized media.</li>
+						<li>Compare the audio to the captions for accuracy, time-synchronization, and equivalence. Lower accuracy of captions for live broadcasts may be acceptable due to limitations of real-time caption capabilities.</li>
+					</ol>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.2.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#captions-live" target="_blank">Captions (live)</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">18.a CSS Content and Positioning</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Meaningful background images rendered by CSS</p></td>
+        <td><p>Check that the meaningful CSS image provides an equivalent text alternative description:</p>
+			<ol>
+				<li>ARIA role=”img” and non-empty aria-label value, and</li>
+				<li>The aria-label value provides the same information as the meaningful background image</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#non-text-content" target="_blank">Non-text content</a></td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">18.b CSS Content and Positioning</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Meaningful page content inserted by CSS using ::before or ::after</p></td>
+        <td><p>For meaningful content provided via CSS, check that equivalent information is available without the CSS content.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#info-and-relationships" target="_blank">Info and relationships</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">18.c CSS Content and Positioning</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Content positioned with CSS position:</p></td>
+        <td>
+			<ol>
+				<li>Check that the reading order of the content (in context) is correct without the CSS position property.</li>
+				<li>Check that the meaning of the content (in context) is preserved without the CSS position property.</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.3.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#meaningful-sequence" target="_blank">Meaningful sequence</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">19.a Frames</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Frames</p></td>
+        <td><p>Check if each &#60;frame&#62; has a title attribute that describes its content.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>3 frames, 1 with no title: <a href="http://coc.kciprojects.com/ooc/stubs/sframes/sframes.html" target="_blank">AK Static Frames</a></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">19.b iFrames</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td>iFrames</td>
+        <td><p>Check if the combination of <a href="https://www.w3.org/TR/html-aam-1.0/#iframe-element" target="_blank">accessible name and description</a> for each &#60;iframe&#62; describes its content</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>No iframe acc name: <a href="http://coc.kciprojects.com/ooc/stubs/siframes/BarrierTest_siFrames.html" target="_blank">AK BarrierTest_siFrames</a></li>
+			<li>2 iframes, 1 with no acc name: <a href="http://coc.kciprojects.com/ooc/stubs/siframes/BarrierTest_siFrames2.html" target="_blank">AK BarrierTest_siFrames2</a></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">20. Conforming Alternate Version</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Multiple versions of the same content.</p></td>
+        <td>
+			<ol>
+				<li>Check that the alternate version provides all of the same information and functionality in the same human language.</li>
+				<li>Check that the alternate version is as up to date as the non-conforming content.</li>
+				<li>Check that the alternate version passes all other baseline tests.</li>
+				<li>Check that at least one of the following is true:
+					<ul>
+						<li>the conforming alternate version can be reached from the non-conforming version via an accessibility-supported mechanism, or</li>
+						<li>the non-conforming version can only be reached from the alternate version, or</li>
+						<li>the non-conforming version can only be reached from a conforming version that also provides a mechanism to reach the alternate version.</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>WCAG <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#conforming-alternate-versiondef" target="_blank">Conforming Alternate Version</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">21.a Timed Events</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Identify any instances of content time limits (excluding exceptions described).</p>
+			<ol>
+				<li>Real-time Exception: The time limit is a required part of a real-time event (for example, an auction), and no alternative to the time limit is possible; or</li>
+				<li>Essential Exception: The time limit is essential and extending it would invalidate the activity; or</li>
+				<li>20 Hour Exception: The time limit is longer than 20 hours.</li>
+			</ol>
+		</td>
+        <td><p>Check that at least one of the following is true before time expires:</p>
+			<ul>
+				<li>The user has the ability to turn off the time limit.</li>
+				<li>The user has the ability to adjust the time limit before encountering it over a wide range that is at least ten times the length of the default setting.</li>
+				<li>The user is warned before time expires AND:
+					<ul>
+						<li>Given at least 20 seconds to extend the time limit with a simple action (e.g., “press the space bar”), AND</li>
+						<li>Allowed to extend the time limit at least ten times.</li>
+					</ul>
+				</li>
+			</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.2.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#timing-adjustable" target="_blank">Timing adjustable</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">21.b Timed Events</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Any moving, blinking, or scrolling information that meets ALL of the following:</p>
+			<ol>
+				<li>Starts automatically, AND</li>
+				<li>Lasts more than 5 seconds, AND</li>
+				<li>Is presented in parallel with other content, AND</li>
+				<li>Moving, blinking, scrolling is not essential</li>
+			</ol>
+		</td>
+        <td><p>Check that there is a mechanism for the user to pause, stop, or hide it</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.2.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#pause-stop-hide" target="_blank">Pause, stop, hide</a></td>
+        <td>WCAG <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-conf-req5-head" target="_blank">Conformance Requirement 5: Non-Interference</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">21.c Timed Events</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Any auto-updating information that meets ALL of the following:</p>
+			<ul>
+				<li>Starts automatically, AND</li>
+				<li>Is presented in parallel with other content, AND</li>
+				<li>Is not part of an activity where it is essential</li>
+			</ul>
+		</td>
+        <td><p>Check that there is a mechanism for the user to pause, stop, or hide it or to control the frequency of the update</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.2.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#pause-stop-hide" target="_blank">Pause, stop, hide</a></td>
+        <td>WCAG <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-conf-req5-head" target="_blank">Conformance Requirement 5: Non-Interference</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">21.d Timed Events</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Audio that automatically plays for more than 3 seconds.</p></td>
+        <td><p>Check that either</p>
+			<ul>
+				<li>a mechanism is available at the beginning of the page content or in platform accessibility features to pause or stop the audio, OR</li>
+				<li>a mechanism is available at the beginning of the page content or in platform accessibility features to control audio volume independently from the overall system volume level.</li>
+			</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.4.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#audio-control" target="_blank">Audio control</a></td>
+        <td>WCAG <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-conf-req5-head" target="_blank">Conformance Requirement 5: Non-Interference</a></td>
+      </tr>
+	  <tr>
+		<th scope="row">22. Resize Text</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>All text on a page.</p></td>
+        <td>
+			<ol>
+				<li>Check that there is a mechanism to resize, scale, or zoom in on the content at least to 200% of original size. Known approaches include:
+					<ul>
+						<li>Browser zoom function</li>
+						<li>Accessibility features provided by the platform or Operating System</li>
+						<li>Controls to change text size. (If browser, operating system, or platform’s zoom function is not supported by the page, the page must provide the resize mechanism.)</li>
+					</ul>
+				</li>
+				<li>Modify the font size appearance to twice the width and height, or 200% larger.</li>
+				<li>Check for all of the following:
+					<ul>
+						<li>Text is not clipped, truncated or obscured</li>
+						<li>Text entered in text-based form controls resize fully</li>
+						<li>All functionality is available</li>
+						<li>All content is available</li>
+					</ul>
+				</li>
+			</ol>
+		</td>
+		<td>
+		<p>Pass</p>
+		<ol>
+			<li class="questionable">Zoom to 200% ok: <a href="http://coc.kciprojects.com/ooc/stubs/Resize-Text_1.4.4_DisabledScaling.html" target="_blank">AK Disabled Scaling</a> - AK fails this</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>1.4.4 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#resize-text" target="_blank">Resize text</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">23. Multiple Ways</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Web page within a set of related Web pages.</p></td>
+        <td><p>Check that the page provides two or more ways to locate a Web page within a set of web pages; these may include (but are not limited to) techniques such as:</p>
+			<ul>
+				<li>site maps</li>
+				<li>site search</li>
+				<li>tables of contents</li>
+				<li>navigation menus or dropdowns</li>
+				<li>navigation trees</li>
+				<li>links between pages</li>
+			</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>2.4.5 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#multiple-ways" target="_blank">Multiple ways</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">24. Parsing</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>All web pages</p></td>
+        <td><p>Check that (except where the specifications allow these features)</p>
+			<ul>
+				<li>elements have complete start and end tags,</li>
+				<li>elements are nested according to their specifications,</li>
+				<li>elements do not contain duplicate attributes, and</li>
+				<li>any IDs are unique.</li>
+			</ul>
+		</td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li>Duplicate IDs on 2 divs, one has aria-hidden true: <a href="http://coc.kciprojects.com/ooc/stubs/Parsing_1.4.1_UniqueID.html" target="_blank">AK Parsing UniqueID</a> - get on its own page</li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li>Duplicate IDs on 2 divs: <a href="http://coc.kciprojects.com/ooc/stubs/Parsing_1.4.1_UniqueID.html" target="_blank">AK Parsing UniqueID</a> - get on its own page</li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>4.1.1 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#parsing" target="_blank">Parsing</a></td>
+        <td>-</td>
+      </tr>
+	  <tr>
+		<th scope="row">25. Non-Interference</th>
+        <!-- <th scope="row">4.1.2 <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&currentsidebar=%23col_overview&levels=aaa#name-role-value" target="_blank">Name, role, value</a></th> -->
+		<td><p>Baseline tests for 1.4.2 and 2.2.2, 2.1.2, 2.3.1.</p></td>
+        <td><p>Check that all test results are pass.</p></td>
+        <td>
+		<p>Pass</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Fail</p>
+		<ol>
+			<li></li>
+		</ol>
+		<p>Not applicable</p>
+		<ol>
+			<li></li>
+		</ol>
+		</td>
+        <td>WCAG <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-conf-req5-head" target="_blank">Conformance Requirement 5: Non-Interference</a></td>
+        <td>-</td>
+      </tr>
+	  
+    </tbody>
+  </table>
+
+<!-- code credit: https://datatables.net/plug-ins/sorting/natural -->
+
+</body>
+</html>
