@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ANDI Test Page 5</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="John Cotter" />
+<meta charset="UTF-8" />
+<meta name="description" content="A test page for testing the output of screen readers and the ANDI accessibility test tool" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="andi_test.js"></script>
+<script>
+$(document).ready(function(){
+
+});
+</script>
+<link rel="stylesheet" href="andi_test.css" />
+
+<style>
+table{
+margin-bottom:2em;
+border-collapse: collapse;
+margin-left: 2em;
+}
+td, th{
+border:1px solid black;
+padding:2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header><h1>ANDI TEST PAGE 5<br />tables</h1>
+
+<div id='references'>
+<span id='dby1'>describedBy</span>
+<span id='dby2'>describedBy2</span>
+<span id='lby1'>labelledBy</span>
+<span id='lby2'>labelledBy2</span>
+<span id='matching1'>matching</span>
+<span id='matching2'>matching</span>
+</div>
+<p style='font-size:smaller; color:gray; text-align: justify; text-justify: inter-word;'>
+Use this page to test ANDI Tables module.
+</p>
+<br />
+</header>
+
+<table>
+<caption>TABLE 1: Scope Missing In Col 2 and Row 3</caption>
+<tr>
+<th scope="col">column 1</th>
+<th>COLUMN 2</th>
+<th scope="col">column 3</th>
+</tr>
+<tr>
+<th scope="row">row 1</th>
+<td>cell 1</td>
+<td>cell 2</td>
+</tr>
+<tr>
+<th scope="row">row 2</th>
+<td>cell 3</td>
+<td>cell 4</td>
+</tr>
+<tr>
+<th>ROW 3</th>
+<td>cell 5</td>
+<td>cell 6</td>
+</tr>
+</table>
+
+<table>
+<caption>TABLE 2: Cells left and above th</caption>
+<tr>
+<td>above</td>
+<td>above</td>
+<td>above</td>
+<td>above</td>
+</tr>
+<tr>
+<td></td>
+<th scope="col">col 1</th>
+<th scope="col">col 2</th>
+<th scope="col">col 3</th>
+</tr>
+<tr>
+<td>lefty</td>
+<th scope="row">row 1</th>
+<td>cell</td>
+<td>cell</td>
+</tr>
+<tr>
+<td>lefty</td>
+<th scope="row">row 2</th>
+<td>cell</td>
+<td>cell</td>
+</tr>
+<tr>
+<td>lefty</td>
+<th scope="row">row 3</th>
+<td>cell</td>
+<td>cell</td>
+</tr>
+</table>
+
+
+	<table>
+		<caption>TABLE 3: Colgroup establishing table segmentation</caption>
+		<tr>
+		<th colspan='3' scope='colgroup'>Colgroup 1</th>
+		</tr>
+		<tr>
+		<th>row 1</th>
+		<td>cell 1</td>
+		<td>cell 2</td>
+		</tr>
+		<tr>
+		<th>row 2</th>
+		<td>cell 3</td>
+		<td>cell 4</td>
+		</tr>
+		<tr>
+		<th>row 2</th>
+		<td>cell 5</td>
+		<td>cell 6</td>
+		</tr>
+		<tr>
+		<th colspan='3' scope='colgroup'>Colgroup 2</th>
+		</tr>
+		<tr>
+		<th>row 4</th>
+		<td>cell 7</td>
+		<td>cell 8</td>
+		</tr>
+		<tr>
+		<th>row 5</th>
+		<td>cell 9</td>
+		<td>cell 10</td>
+		</tr>
+		<tr>
+		<th>row 6</th>
+		<td>cell 11</td>
+		<td>cell 12</td>
+		</tr>
+		</table>
+
+	<table>
+	  <caption>TABLE 4: Combine colgroup and col with rows</caption>
+	  <thead>
+		<tr>
+		  <th scope="row">Row 1</th>
+		  <th colspan="2" scope="colgroup">Colgroup 1</th>
+		  <th colspan="2" scope="colgroup">Colgroup 2</th>
+		  <th colspan="2" scope="colgroup">Colgroup 3</th>
+		</tr>
+		<tr>
+		  <th scope="row">Row 2</th>
+		  <th scope="col">Col 1</th>
+		  <th scope="col">Col 2</th>
+		  <th scope="col">Col 3</th>
+		  <th scope="col">Col 4</th>
+		  <th scope="col">Col 5</th>
+		  <th scope="col">Col 6</th>
+		</tr>
+	  </thead>
+		<tbody>
+		<tr>
+		  <th scope="row">Row 3</th>
+		  <td>cell 1</td>
+		  <td>cell 2</td>
+		  <td>cell 3</td>
+		  <td>cell 4</td>
+		  <td>cell 5</td>
+		  <td>cell 6</td>
+		</tr>
+		<tr>
+		  <th scope="row">Row 4</th>
+		  <td>cell 7</td>
+		  <td>cell 8</td>
+		  <td>cell 9</td>
+		  <td>cell 10</td>
+		  <td>cell 11</td>
+		  <td>cell 12</td>
+		</tr>
+		<tr>
+		  <th scope="row">Row 5</th>
+		  <td>cell 13</td>
+		  <td>cell 14</td>
+		  <td>cell 15</td>
+		  <td>cell 16</td>
+		  <td>cell 17</td>
+		  <td>cell 18</td>
+		</tr>
+		<tr>
+		  <th scope="row">Row 6</th>
+		  <td>cell 19</td>
+		  <td>cell 20</td>
+		  <td>cell 21</td>
+		  <td>cell 22</td>
+		  <td>cell 23</td>
+		  <td>cell 24</td>
+		</tr>
+	  </tbody>
+	</table>
+
+	<table>
+	<caption>TABLE 5: Aria-Sort Testing</caption>
+	<tr>
+	<th aria-sort="ascending">TH ascending</th>
+	<th aria-sort="descending">TH descending</th>
+	<th aria-sort="none">TH none</th>
+	<th aria-sort="other">TH other</th>
+	
+	<th aria-sort="ascending"><a href='#'>Link ascending</a></th>
+	<th aria-sort="descending"><a href='#'>Link descending</a></th>
+	<th aria-sort="none"><a href='#'>Link none</a></th>
+	<th aria-sort="other"><a href='#'>Link other</a></th>
+	</tr>
+	<tr>
+	<td>cell 1</td>
+	<td>cell 2</td>
+	<td>cell 3</td>
+	<td>cell 4</td>
+	<td>cell 5</td>
+	<td>cell 6</td>
+	<td>cell 7</td>
+	<td>cell 8</td>
+	</tr>
+	</table>
+
+	<table>
+	<caption>TABLE 6: Rowspans and colspan (no scope)</caption>
+	<tr><th rowspan="2">TH 1</th>
+		<th rowspan="2">TH 2</th>
+		<th colspan="3">TH 3</th>
+		<th rowspan="2">TH 4</th>
+	  </tr><tr>
+		<th>TH 5</th>
+		<th>TH 6</th>
+		<th>TH 7</th>
+	  </tr><tr>
+		<td>cell 1</td>
+		<td>cell 2</td>
+		<td>cell 3</td>
+		<td>cell 4</td>
+		<td>cell 5</td>
+		<td>cell 6</td>
+	  </tr>
+	  </table>
+
+
+	<table class='t'>
+	<caption>TABLE 7: Combining scope method with headers method (ANDI doesn't approve)</caption>
+	<tr>
+	<th scope='col'>Year/Quarter</th>
+	<th scope='col'>Books</th>
+	<th scope='col'>Magazines</th>
+	<th scope='col'>Journals <a href="#">link</a></th>
+	</tr>
+	<tr>
+	<th id='2017_year' scope="row" class='l'>2017</th>
+	<td>5</td>
+	<td>15</td>
+	<td>10</td>
+	</tr>
+	<tr>
+	<th id='2017_q1' headers="2017_year"  scope="row" class='r'>Q1</th>
+	<td headers="2017_year">1</td>
+	<td headers="2017_year">3</td>
+	<td headers="2017_year">1</td>
+	</tr>
+	<tr>
+	<th id='2017_q2' headers="2017_year" scope="row" class='r'>Q2</th>
+	<td headers="2017_year">3</td>
+	<td headers="2017_year">7</td>
+	<td headers="2017_year">4</td>
+	</tr>
+	<tr>
+	<th id='2017_q3' headers="2017_year" scope="row" class='r'>Q3</th>
+	<td headers="2017_year">0</td>
+	<td headers="2017_year">3</td>
+	<td headers="2017_year">2</td>
+	</tr>
+	<tr>
+	<th id='2017_q4' headers="2017_year" scope="row" class='r'>Q4</th>
+	<td headers="2017_year">2</td>
+	<td headers="2017_year">2</td>
+	<td headers="2017_year">3</td>
+	</tr>
+
+	<tr>
+	<th id='2016_year' scope="row" class='l'>2016</th>
+	<td>12</td>
+	<td>21</td>
+	<td>14</td>
+	</tr>
+	<tr>
+	<th id='2016_q1' headers="2016_year" scope="row" class='r'>Q1</th>
+	<td headers="2016_year">3</td>
+	<td headers="2016_year">5</td>
+	<td headers="2016_year">4</td>
+	</tr>
+	<tr>
+	<th id='2016_q2' headers="2016_year" scope="row" class='r'>Q2</th>
+	<td headers="2016_year">6</td>
+	<td headers="2016_year">7</td>
+	<td headers="2016_year">3</td>
+	</tr>
+	<tr>
+	<th id='2016_q3' headers="2016_year" scope="row" class='r'>Q3</th>
+	<td headers="2016_year">2</td>
+	<td headers="2016_year">4</td>
+	<td headers="2016_year">2</td>
+	</tr>
+	<tr>
+	<th id='2016_q4' headers="2016_year" scope="row" class='r'>Q4</th>
+	<td headers="2016_year">1</td>
+	<td headers="2016_year">5</td>
+	<td headers="2016_year">2</td>
+	</tr>
+	</table>
+
+	<table>
+	<caption>TABLE 8: A complex table</caption>
+		<tbody>
+		<tr>
+			<th scope="col">A</th>
+			<th colspan="2" scope="col">B</th>
+			<th scope="col">C</th>
+		</tr>
+		<tr>
+		<th scope="row">$</th>
+			<td>1</td>
+			<td colspan="2">2</td>
+
+		</tr>
+		<tr>
+			<th scope="row">$$</th>
+			<td rowspan="3">4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<th scope="row">$$$</th>
+
+			<td>8</td>
+			<td>9</td>
+		</tr>
+			<tr>
+			<th scope="row">$$$$</th>
+
+			<td>8</td>
+			<td>9</td>
+		</tr>
+	</tbody>
+	</table>
+
+	<table>
+	<caption>TABLE 9: A complex table</caption>
+		<tbody><tr>
+			<td></td>
+			<th scope="col">Name</th>
+			<th scope="col">Age</th>
+			<th scope="col">Birthday</th>
+		</tr>
+		<tr>
+			<th rowspan="2" scope="row">by birth</th>
+			<th scope="row">Jackie</th>
+			<td>5</td>
+			<td>April 5</td>
+		</tr>
+		<tr>
+			<th scope="row">Beth</th>
+			<td>8</td>
+			<td>January 14</td>
+		</tr>
+		<tr>
+			<th scope="row">by marriage</th>
+			<th scope="row">Beth</th>
+			<td>8</td>
+			<td>January 14</td>
+		</tr>
+	</tbody>
+	</table>
+
+	<table role='presentation'>
+	<tr>
+	<td colspan='3'>TABLE 10: Presentation table with nested data table</td>
+	</tr>
+	<tr>
+	<td>cell a</td>
+	<td>cell b</td>
+	<td>cell c</td>
+	</tr>
+	<tr>
+	<td>cell d</td>
+	<td>cell e</td>
+	<td>
+
+		<table>
+		<caption>TABLE 11: nested data table</caption>
+		<tr>
+		<th>data col 1</th>
+		<th>data col 2</th>
+		<th>data col 3</th>
+		</tr>
+		<tr>
+		<td>data cell a</td>
+		<td>data cell b</td>
+		<td>data cell c</td>
+		</tr>
+		<tr>
+		<td>data cell a</td>
+		<td>data cell b</td>
+		<td>data cell c</td>
+		</tr>
+		</table>
+
+	</td>
+	</tr>
+	</table>
+
+		<table>
+		<caption>TABLE 12: Super basic table (no scopes)</caption>
+		<tr>
+		<th>TH 1</th>
+		<th>TH 2</th>
+		<th>TH 3</th>
+		</tr>
+		<tr>
+		<td>cell 1</td>
+		<td>cell 2</td>
+		<td>cell 3</td>
+		</tr>
+		<tr>
+		<td>cell 4</td>
+		<td>cell 5</td>
+		<td>cell 6</td>
+		</tr>
+		</table>
+
+		<table>
+		<caption>TABLE 12: Super basic table with th in each row and empty upper left td (no scopes)</caption>
+		<tr>
+		<td></td>
+		<th>TH 1</th>
+		<th>TH 2</th>
+		<th>TH 3</th>
+		</tr>
+		<tr>
+		<th>TH 4</th>
+		<td>cell 1</td>
+		<td>cell 2</td>
+		<td>cell 3</td>
+		</tr>
+		<tr>
+		<th>TH 5</th>
+		<td>cell 4</td>
+		<td>cell 5</td>
+		<td>cell 6</td>
+		</tr>
+		</table>
+
+
+	<table>
+	<caption>TABLE 13: Basic table with scope col and rows</caption>
+	<tr>
+	<th scope="col">col 1</th>
+	<th scope="col">col 2</th>
+	<th scope="col">col 3</th>
+	</tr>
+	<tr>
+	<th scope="row">row 1</th>
+	<td>cell 1</td>
+	<td>cell 2</td>
+	</tr>
+	<tr>
+	<th scope="row">row 2</th>
+	<td>cell 3</td>
+	<td>cell 4</td>
+	</tr>
+	<tr>
+	<th scope="row">row 3</th>
+	<td>cell 5</td>
+	<td>cell 6</td>
+	</tr>
+	</table>
+	
+	<table>
+	<caption>TABLE 14: Many Levels of Scope</caption>
+	<tr>
+	<th scope="col">col A1</th>
+	<th scope="col">col A2</th>
+	<th scope="col">col A3</th>
+	</tr>
+	<tr>
+	<th scope="col">col B1</th>
+	<th scope="col">col B2</th>
+	<th scope="col">col B3</th>
+	</tr>
+	<tr>
+	<th scope="col">col C1</th>
+	<th scope="col">col C2</th>
+	<th scope="col">col C3</th>
+	</tr>
+	<tr>
+	<th scope="col">col D1</th>
+	<th scope="col">col D2</th>
+	<th scope="col">col D3</th>
+	</tr>
+	<tr>
+	<th scope="col">col E1</th>
+	<th scope="col">col E2</th>
+	<th scope="col">col E3</th>
+	</tr>
+	<tr>
+	<th scope="col">col F1</th>
+	<th scope="col">col F2</th>
+	<th scope="col">col F3</th>
+	</tr>
+	<tr>
+	<td>cell a</td>
+	<td>cell b</td>
+	<td>cell c</td>
+	</tr>
+	</table>
+
+	<table role='presentation'>
+	<caption>TABLE 15: presentation table with caption and th markup</caption>
+	<tr>
+	<th id="col1">col 1</th>
+	<th id="col2">col 2</th>
+	<th id="col3">col 3</th>
+	</tr>
+	<tr>
+	<th id="row1" headers="col1">row 1</th>
+	<td headers="row1 col2">col 2</td>
+	<td headers="row1 col3">col 3</td>
+	</tr>
+	<tr>
+	<th id="row2">row 2</th>
+	<td headers="row2 col2">cell</td>
+	<td headers="row2 col3">cell</td>
+	</tr>
+	<tr>
+	<th id="row3">row 3</th>
+	<td headers="row3 col2">cell</td>
+	<td headers="row3 col3">cell</td>
+	</tr>
+	</table>
+
+	<table>
+	<caption>TABLE 16: table with different accessibility components in the th</caption>
+	<tr>
+	<th scope="col">col 1 innertext</th>
+	<th scope="col" aria-label='hello 1'>col 2 aria-label</th>
+	<th scope="col" aria-labelledby='hello2'>col 3 aria-labelledby</th>
+	</tr>
+	<tr>
+	<td>cell 1</td>
+	<td>cell 2</td>
+	<td>cell 3</td>
+	</tr>
+	<tr>
+	<td>cell 4</td>
+	<td>cell 5</td>
+	<td>cell 6</td>
+	</tr>
+	</table>
+	<span id='hello2' style='color:white'>hello 2</span>
+
+	<table>
+	<caption>TABLE 17: No scopes or headers table with multiple rows of th that should be scope=col</caption>
+	<tr>
+	<th>TH 1</th>
+	<th>TH 2</th>
+	<th>TH 3</th>
+	</tr>
+	<tr>
+	<th>TH 4</th>
+	<th>TH 5</th>
+	<th>TH 6</th>
+	</tr>
+	<tr>
+	<td>cell a</td>
+	<td>cell b</td>
+	<td>cell c</td>
+	</tr>
+	</table>
+
+	<table>
+	<caption>TABLE 18: no th</caption>
+	<tr>
+	<td>cell a</td>
+	<td>cell b</td>
+	<td>cell c</td>
+	</tr>
+	<tr>
+	<td>cell d</td>
+	<td>cell e</td>
+	<td>cell f</td>
+	</tr>
+	</table>
+	
+	<table>
+	<caption>TABLE 19: headers table</caption>
+	<tr>
+	<th id='table19col1'>col 1</th>
+	<th id='table19col2'>col 2</th>
+	<td id='table19col3'>col 3</td>
+	<td></td>
+	</tr>
+	<tr>
+	<td headers='table19col1 table19row1'>cell a</td>
+	<td headers='table19col2 table19row1'>cell b</td>
+	<td headers='table19col3 table19row1'>cell c</td>
+	<th id='table19row1'>row 1</th>
+	</tr>
+	<tr>
+	<td headers='table19col1 table19row2'>cell d</td>
+	<td headers='table19col2 table19row2'>cell e</td>
+	<td headers='table19col3 table19row2 notThere'>cell f</td>
+	<th id='table19row2'>row 2</th>
+	</tr>
+	</table>
+	
+	<table>
+	<caption>TABLE 20: scope=rowgroup scope=row rowspan</caption>
+	<tr>
+	<th scope="rowgroup" rowspan='2'>row 1</th>
+	<th scope='row'>row 1</th>
+	<td>cell 1</td>
+	<td>cell 2</td>
+	<td>cell 3</td>
+	</tr>
+	<tr>
+	<th scope='row'>row 2</th>
+	<td>cell 4</td>
+	<td>cell 5</td>
+	<td>cell 6</td>
+	</tr>
+	<tr>
+	<th scope="rowgroup" rowspan='2'>row 1</th>
+	<th scope='row'>row 3</th>
+	<td>cell 7</td>
+	<td>cell 8</td>
+	<td>cell 9</td>
+	</tr>
+	<tr>
+	<th scope='row'>row 4</th>
+	<td>cell 10</td>
+	<td>cell 11</td>
+	<td>cell 12</td>
+	</tr>
+	</table>
+
+	<table>
+	<caption>TABLE 21: scope=rowgroup scope=row</caption>
+	<tr>
+	<th scope="rowgroup" rowspan='2'>row 1</th>
+	<th scope='row'>row 1</th>
+	<td>cell 1</td>
+	<td>cell 2</td>
+	<td>cell 3</td>
+	</tr>
+	<tr>
+	<th scope='row'>row 2</th>
+	<td>cell 4</td>
+	<td>cell 5</td>
+	<td>cell 6</td>
+	</tr>
+	<tr>
+	<th scope="rowgroup">row 1</th>
+	<th scope='row'>row 3</th>
+	<td>cell 7</td>
+	<td>cell 8</td>
+	<td>cell 9</td>
+	</tr>
+	<tr>
+	<th scope='row'>row 4</th>
+	<th scope='row'>row 4</th>
+	<td>cell 10</td>
+	<td>cell 11</td>
+	<td>cell 12</td>
+	</tr>
+	</table>
+	
+	<table>
+	<caption>TABLE 22: Empty upper left td</caption>
+	<tr>
+	<td></td>
+	<th scope="col">col 2</th>
+	<th scope="col">col 3</th>
+	</tr>
+	<tr>
+	<th scope="row">row 1</th>
+	<td>cell 1</td>
+	<td>cell 2</td>
+	</tr>
+	<tr>
+	<th scope="row">row 2</th>
+	<td>cell 3</td>
+	<td>cell 4</td>
+	</tr>
+	<tr>
+	<th scope="row">row 3</th>
+	<td>cell 5</td>
+	<td>cell 6</td>
+	</tr>
+	</table>
+	
+	<table>
+	<caption>TABLE 22: Empty upper left th</caption>
+	<tr>
+	<th></th>
+	<th scope="col">col 2</th>
+	<th scope="col">col 3</th>
+	</tr>
+	<tr>
+	<th scope="row">row 1</th>
+	<td>cell 1</td>
+	<td>cell 2</td>
+	</tr>
+	<tr>
+	<th scope="row">row 2</th>
+	<td>cell 3</td>
+	<td>cell 4</td>
+	</tr>
+	<tr>
+	<th scope="row">row 3</th>
+	<td>cell 5</td>
+	<td>cell 6</td>
+	</tr>
+	</table>
+	
+	<table role="grid">
+	<caption>TABLE 23: grid with header missing role</caption>
+	<tr role=row>
+	<th></th>
+	<th role="columnheader">col 2</th>
+	<th role="columnheader">col 3</th>
+	</tr>
+	<tr role=row>
+	<td role="gridcell">cell 1</td>
+	<td role="gridcell">cell 2</td>
+	<td role="gridcell">cell 3</td>
+	</tr>
+	<tr role=row>
+	<td role="gridcell">cell 4</td>
+	<td role="gridcell">cell 5</td>
+	<td role="gridcell">cell 6</td>
+	</tr>
+	<tr role=row>
+	<td role="gridcell">cell 7</td>
+	<td role="gridcell">cell 8</td>
+	<td role="gridcell">cell 9</td>
+	</tr>
+</table>
+
+	<table role="grid">
+	<caption>TABLE 24: grid with cell not contained by role=row</caption>
+	<tr role=row>
+	<th role="columnheader"></th>
+	<th role="columnheader">col 2</th>
+	<th role="columnheader">col 3</th>
+	</tr>
+	<tr>
+	<td role="gridcell">cell 1</td>
+	<td role="gridcell">cell 2</td>
+	<td role="gridcell">cell 3</td>
+	</tr>
+	<tr role=row>
+	<td role="gridcell">cell 4</td>
+	<td role="gridcell">cell 5</td>
+	<td role="gridcell">cell 6</td>
+	</tr>
+	<tr role=row>
+	<td role="gridcell">cell 7</td>
+	<td role="gridcell">cell 8</td>
+	<td role="gridcell">cell 9</td>
+	</tr>
+	</table>
+
+<footer>
+Navigation:
+<a href="andi_test1.html">1 (Form Elements)</a>
+<a href="andi_test2.html">2 (Nested Elements)</a>
+<a href="andi_test3.html">3 (Miscellaneous Scenarios)</a>
+<a href="andi_test4.html">4 (Basic Elements)</a>
+<a href="andi_test6.html">6 (ARIA Roles)</a>
+</footer>
+
+</body>
+
+</html>

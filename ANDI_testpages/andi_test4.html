@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ANDI Test Page 4</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="John Cotter" />
+<meta charset="UTF-8" />
+<meta name="description" content="A test page for testing the output of screen readers and the ANDI accessibility test tool" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="andi_test.js"></script>
+<script>
+$(document).ready(function(){
+	//Run the auto tests
+	autoTest("#img-tabindex");
+	autoTest("#img-usemap");
+	autoTest("#link");
+	autoTest("#link_img");
+	autoTest("#div-tabindex");
+	autoTest("#p-tabindex");
+	autoTest("#label-tabindex");
+	autoTest("#li-tabindex");
+	autoTest("#unknown");
+	autoTest("#figure");
+	
+	getOnWithIt();
+});
+</script>
+<link rel="stylesheet" href="andi_test.css" />
+</head>
+
+<body>
+<div id='left'>
+<header><h1>ANDI TEST PAGE 4<br />basic native elements</h1>
+
+<div id='references'>
+<span id='dby1'>describedBy</span>
+<span id='dby2'>describedBy2</span>
+<span id='lby1'>labelledBy</span>
+<span id='lby2'>labelledBy2</span>
+<span id='matching1'>matching</span>
+<span id='matching2'>matching</span>
+</div>
+<p style='font-size:smaller; color:gray; text-align: justify; text-justify: inter-word;'>
+Use this page to test ANDI output on basic native elements. 
+</p>
+</header>
+<div id='main'>
+
+<!------------------------------------>
+<div class='division' id='img-tabindex'>
+<h2>IMG[tabindex]</h2>
+
+<div class='autoTestCondition'>
+<img src='logo.png' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!----><h4>DANGER</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>title</h4>
+<!----><h4>alt</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>alt title</h4>
+<!----><h4>alt describedby</h4>
+<!--10--><h4>title describedby+WARNING</h4>
+<!----><h4>alt describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>DANGER</h4>
+<!--25--><h4>alt</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>title</h4>
+<!----><h4>DANGER</h4>
+<!--30--><h4>title describedby+WARNING</h4>
+<!----><h4>alt describedby+WARNING</h4>
+<!----><h4>alt title</h4>
+</div>
+
+</div>
+
+<!---------------------------------------------------->
+
+<div class='division' id='link'>
+<h2>A</h2>
+
+<div class='autoTestCondition'>
+<a href='#' tabindex='0'>content</a>
+</div>
+<div class='autoTestResults'>
+<!----><h4>content</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>content title</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content describedby</h4>
+<!----><h4>content title+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!--10--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content</h4>
+<!--25--><h4>content+WARNING</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>content title</h4>
+<!----><h4>content describedby</h4>
+<!--30--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>content title+WARNING</h4>
+</div>
+
+</div>
+
+<!------------------------------------------>
+
+<div class='division' id='p-tabindex'>
+<h2>P (same as H1 H2 H3 H4 H5 H6)</h2>
+
+<div class='autoTestCondition'>
+<p tabindex='0'>content</p>
+</div>
+<div class='autoTestResults'>
+<!----><h4>content</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>content title</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content describedby</h4>
+<!----><h4>content title+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!--10--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content</h4>
+<!--25--><h4>content+WARNING</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>content title</h4>
+<!----><h4>content describedby</h4>
+<!--30--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>content title+WARNING</h4>
+</div>
+
+</div>
+
+<!------------------------------------------>
+
+<div class='division' id='label-tabindex'>
+<h2>LABEL[tabindex]</h2>
+
+<div class='autoTestCondition'>
+<label tabindex='0'>content</label>
+</div>
+<div class='autoTestResults'>
+<!----><h4>content</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>content title</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content describedby</h4>
+<!----><h4>content title+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!--10--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!--25--><h4>content+WARNING</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>content title</h4>
+<!----><h4>content describedby</h4>
+<!--30--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>content title+WARNING</h4>
+</div>
+
+</div>
+
+<!------------------------------------------>
+
+<div class='division' id='div-tabindex'>
+<h2>DIV (same as SPAN SECTION)</h2>
+
+<div class='autoTestCondition'>
+<div tabindex='0'>content</div>
+</div>
+<div class='autoTestResults'>
+<!----><h4>content</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>content title</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content describedby</h4>
+<!----><h4>content title+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!--10--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content</h4>
+<!--25--><h4>content+WARNING</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>content title</h4>
+<!----><h4>content describedby</h4>
+<!--30--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>content title+WARNING</h4>
+</div>
+
+</div>
+
+<!------------------------------------------>
+
+<div class='division' id='li-tabindex'>
+<h2>LI</h2>
+<div class='autoTestCondition'>
+<ul><li tabindex='0'>content</li></ul>
+</div>
+<div class='autoTestResults'>
+<!----><h4>content</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>content title</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content describedby</h4>
+<!----><h4>content title+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!--10--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content</h4>
+<!--25--><h4>content+WARNING</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>content title</h4>
+<!----><h4>content describedby</h4>
+<!--30--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>content title+WARNING</h4>
+</div>
+
+</div>
+
+<!------------------------------------------>
+
+<div class='division' id='unknown'>
+<h2>UNKNOWN tag</h2>
+<div class='autoTestCondition'>
+<unknown tabindex='0'>content</unknown>
+</div>
+<div class='autoTestResults'>
+<!----><h4>content</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>content title</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content describedby</h4>
+<!----><h4>content title+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!--10--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>content</h4>
+<!----><h4>content</h4>
+<!----><h4>content+WARNING</h4>
+<!----><h4>content</h4>
+<!--25--><h4>content+WARNING</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>content title</h4>
+<!----><h4>content describedby</h4>
+<!--30--><h4>content describedby+WARNING</h4>
+<!----><h4>content describedby+WARNING</h4>
+<!----><h4>content title+WARNING</h4>
+</div>
+
+</div>
+
+<!--------------------->
+
+<div class='division' id='figure'>
+<h2>FIGURE</h2>
+<div class='autoTestCondition'>
+<figure tabindex='0'><img src='logo.png' /></figure>
+</div>
+<div class='autoTestResults'>
+<!----><h4>DANGER</h4>
+<!----><h4>aria</h4>
+<!----><h4>labelledby</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!--05--><h4>title</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>title+WARNING</h4>
+<!----><h4>DANGER</h4>
+<!--10--><h4>title describedby+WARNING</h4>
+<!----><h4>title describedby+WARNING</h4>
+<!----><h4>aria title</h4>
+<!----><h4>labelledby title</h4>
+<!----><h4>aria+WARNING</h4>
+<!--15--><h4>labelledby+WARNING</h4>
+<!----><h4>aria describedby</h4>
+<!----><h4>labelledby describedby</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!----><h4>aria describedby+WARNING</h4>
+<!--20--><h4>aria title+WARNING</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>DANGER</h4>
+<!----><h4>figcaption</h4>
+<!--25--><h4>figcaption+WARNING</h4>
+<!----><h4>aria+WARNING</h4>
+<!----><h4>labelledby+WARNING</h4>
+<!----><h4>figcaption title</h4>
+<!----><h4>figcaption describedby</h4>
+<!--30--><h4>figcaption describedby+WARNING</h4>
+<!----><h4>figcaption describedby+WARNING</h4>
+<!----><h4>figcaption title+WARNING</h4>
+</div>
+
+</div>
+
+<!---------------------->
+
+<div class='division' id='figure'>
+<h2>SVG</h2>
+
+<div class='section'>
+<h3>
+SVG > title, desc
+</h3>
+<h4>title descr</h4>
+<div class='custom test'>
+<svg tabindex=0 width="100" height="100">
+   <circle cx="50" cy="50" r="40" />
+   <title>title</title>
+   <desc>desc</desc>
+</svg>
+</div></div>
+
+<div class='section'>
+<h3>
+SVG[role=img][aria-label] > title, desc
+</h3>
+<h4>aria</h4>
+<div class='custom test'>
+<svg tabindex=0 role=img aria-label="aria" width="100" height="100">
+   <circle cx="50" cy="50" r="40" />
+   <title>title</title>
+   <desc>desc</desc>
+</svg>
+</div></div>
+
+<div class='section'>
+<h3>
+SVG[role=img][aria-label][aria-describedby] > title, desc
+</h3>
+<h4>aria describedBy</h4>
+<div class='custom test'>
+<svg tabindex=0 role=img aria-label="aria" aria-describedby="dby1" width="100" height="100">
+   <circle cx="50" cy="50" r="40" />
+   <title>title</title>
+   <desc>desc</desc>
+</svg>
+</div></div>
+
+</div>
+
+
+<!---------------------->
+
+</div>
+
+<!---------------------->
+<!---------------------->
+<div id='analysisTable'>
+<h2 id='tableName'></h2>
+<button onclick="closeAnalysisTable()" class='button'>Close</button>|
+<button class='differences button' onclick='difference_sr1_sr2(this)'>SR1 vs SR2</button>|
+<button class='differences button' onclick='difference_sr1_andi(this)'>SR1 vs ANDI</button>|
+<button class='differences button' onclick='difference_sr2_andi(this)'>SR2 vs ANDI</button>|
+<button class='differences button' onclick='difference_all(this)'>All Diff</button>|
+<button class='button' onclick='resetDifferences()'>Reset</button>
+
+<div id='tableScrollable'>
+<table summary='analysis of results' tabindex='0' accesskey='t'>
+<thead>
+<th style="width:2em" scope='col'>#</th>
+<th style="width:15em" scope='col'>Accessible Components</th>
+<th class='output col-sr1' scope='col'>SR1 Says</th>
+<th class='output col-sr2' scope='col'>SR2 Says</th>
+<th class='output col-andi' scope='col'>ANDI Should Say</th>
+<th class='output col-issues' scope='col'>ANDI Issues</th>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+
+</body>
+<script>
+
+//These are the test conditions
+//When adding more, be sure to increase the numberOfAutoTests
+function addTestCondition(index, element, h3){
+	//These functions manipulate the elements. They are to be called in a chained fashion.
+	//label should be called near the end. Legend should be called last.
+	function ariaLabel(element){
+		$(h3).append(", aria-label");
+		return $(element).attr("aria-label","aria");
+	}
+	function ariaLabelledby(element){
+		$(h3).append(", labelledby");
+		return $(element).attr("aria-labelledby","lby1");
+	}
+	function title(element){
+		$(h3).append(", title");
+		return $(element).attr("title","title");
+	}
+	function alt(element){
+		$(h3).append(", alt");
+		return $(element).attr("alt","alt");
+	}
+	function ariaDescribedby(element){
+		$(h3).append(", describedby");
+		return $(element).attr("aria-describedby","dby1");
+	}
+	function label(element){
+		$(h3).append(", label(nested)");
+		return $(element).wrap("<label>label</label>");
+	}
+	function labelFor(element){
+		$(h3).append(", label[for]");
+		idUniqueIndex++;
+		$(element).attr("id",idUniqueIndex);
+		return $(element).before("<label for='"+idUniqueIndex+"'>label</label>");
+	}
+	function legend(element){
+		$(h3).append(", legend");
+		return $(element).wrap("<fieldset></fieldset>").before("<legend>legend</legend>");
+	}
+	function figcaption(element){
+		$(h3).append(", figcaption");
+		if($(element).is("figure")){
+			return $(element).prepend("<figcaption>figcaption</figcaption>");
+		}
+		else{
+			return $(element).wrap("<figure></figure>").before("<figcaption>figcaption</figcaption>");
+		}
+	}
+//namers
+	if(1 == index){
+		ariaLabel(element);
+	}
+	else if(2 == index){
+		ariaLabelledby(element);
+	}
+	else if(3 == index){
+		ariaLabel(
+		ariaLabelledby(element));
+	}
+//describers
+	else if(4 == index){
+		title(element);
+	}
+	else if(5 == index){
+		alt(element);
+	}
+	else if(6 == index){
+		ariaDescribedby(element);
+	}
+	else if(7 == index){
+		title(
+		alt(element));
+	}
+	else if(8 == index){
+		alt(
+		ariaDescribedby(element));
+	}
+	else if(9 == index){
+		title(
+		ariaDescribedby(element));
+	}
+	else if(10 == index){
+		title(
+		alt(
+		ariaDescribedby(element)));
+	}
+//combine
+	else if(11 == index){
+		title(
+		ariaLabel(element));
+	}
+	else if(12 == index){
+		title(
+		ariaLabelledby(element));
+	}
+	else if(13 == index){
+		alt(
+		ariaLabel(element));
+	}
+	else if(14 == index){
+		alt(
+		ariaLabelledby(element));
+	}
+	else if(15 == index){
+		ariaDescribedby(
+		ariaLabel(element));
+	}
+	else if(16 == index){
+		ariaDescribedby(
+		ariaLabelledby(element));
+	}
+//blend of old and new namers
+	else if(17 == index){
+		ariaLabel(
+		ariaDescribedby(
+		title(element)));
+	}
+	else if(18 == index){
+		ariaLabel(
+		ariaDescribedby(
+		alt(element)));
+	}
+	else if(19 == index){
+		ariaLabel(
+		title(
+		alt(element)));
+	}
+//legend
+	else if(20 == index){
+		legend(element);
+	}
+//label
+	else if(21 == index){
+		label(element);
+	}
+	else if(22 == index){
+		labelFor(element);
+	}
+//figcaption
+	else if(23 == index){
+		figcaption(element);
+	}
+	else if(24 == index){
+		alt(
+		figcaption(element));
+	}
+	else if(25 == index){
+		ariaLabel(
+		figcaption(element));
+	}
+	else if(26 == index){
+		ariaLabelledby(
+		figcaption(element));
+	}
+	else if(27 == index){
+		title(
+		figcaption(element));
+	}
+	else if(28 == index){
+		ariaDescribedby(
+		figcaption(element));
+	}
+	else if(29 == index){
+		title(
+		ariaDescribedby(
+		figcaption(element)));
+	}
+	else if(30 == index){
+		alt(
+		ariaDescribedby(
+		figcaption(element)));
+	}
+	else if(31 == index){
+		alt(
+		title(
+		figcaption(element)));
+	}
+	<!-- set numberOfAutoTests to one more than this -->
+}
+var numberOfAutoTests = 32; //if more test conditions are added, increase this number
+</script>
+
+<footer>
+Navigation:
+<a href="andi_test1.html">1 (Form Elements)</a>
+<a href="andi_test2.html">2 (Nested Elements)</a>
+<a href="andi_test3.html">3 (Miscellaneous Scenarios)</a>
+<a href="andi_test5.html">5 (Tables)</a>
+<a href="andi_test6.html">6 (ARIA Roles)</a>
+</footer>
+
+</html>

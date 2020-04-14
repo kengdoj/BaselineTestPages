@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ANDI Test Page 3</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="John Cotter" />
+<meta charset="UTF-8" />
+<meta name="description" content="A test page for testing the output of screen readers and the ANDI accessibility test tool" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="andi_test.js"></script>
+<script>
+$(document).ready(function(){
+	getOnWithIt();
+});
+</script>
+<link rel="stylesheet" href="andi_test.css" />
+</head>
+
+<body>
+<div id='left'>
+<header><h1>ANDI TEST PAGE 3<br />miscellaneous&nbsp;scenarios</h1>
+
+<div id='references'>
+<span id='dby1'>describedBy</span>
+<span id='dby2'>describedBy2</span>
+<span id='lby1'>labelledBy</span>
+<span id='lby2'>labelledBy2</span>
+<span id='matching1'>matching</span>
+<span id='matching2'>matching</span>
+</div>
+<p style='font-size:smaller; color:gray; text-align: justify; text-justify: inter-word;'>
+Use this page to test ANDI on miscellaneous scenarios.
+</p>
+</header>
+<div id='main'>
+
+<!-------------------------------->
+<div class='division'>
+<h2>Readonly Required Disabled</h2>
+
+<div class='section'>
+<h3>
+INPUT[text], [aria-label], [readonly]
+</h3>
+<h4>aria readonly</h4>
+<div class='custom test'>
+<input type='input' aria-label='aria' readonly='readonly' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[text], [aria-label], [required]
+</h3>
+<h4>aria required</h4>
+<div class='custom test'>
+<input type='input' aria-label='aria' required='required' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[text], [aria-label], [aria-required]
+</h3>
+<h4>aria required</h4>
+<div class='custom test'>
+<input type='input' aria-label='aria' aria-required='true' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[text], [aria-label], [required], [readonly]
+</h3>
+<h4>aria readonly</h4>
+<div class='custom test'>
+<input type='input' aria-label='aria' required='required' readonly='readonly' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[text], [aria-label], [readonly], [aria-required]
+</h3>
+<h4>aria readonly</h4>
+<div class='custom test'>
+<input type='input' aria-label='aria' readonly='readonly' aria-required='true' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[text], [aria-label], [aria-readonly]
+</h3>
+<h4>aria readonly</h4>
+<div class='custom test'>
+<input type='input' aria-label='aria' aria-readonly='true' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[text], [aria-label], [aria-readonly], [aria-required]
+</h3>
+<h4>aria readonly</h4>
+<div class='custom test'>
+<input type='input' aria-label='aria' aria-readonly='true' aria-required='true' />
+</div></div>
+
+<div class='section'>
+<h3>
+BUTTON, [aria-label], [aria-disabled]
+</h3>
+<h4>aria unavailable</h4>
+<div class='custom test'>
+<button aria-label='aria' aria-disabled='true'>content</button>
+</div></div>
+
+<div class='section'>
+<h3>
+BUTTON, [tabindex], [aria-label], [disabled]
+</h3>
+<h4>NOT FOCUSABLE</h4>
+<div class='custom test'>
+<button aria-label='aria' disabled='disabled' tabindex='0'>content</button>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[file], [aria-label], [aria-required]
+</h3>
+<h4>aria required</h4>
+<div class='custom test'>
+<input type='file' aria-label='aria' aria-required='true' />
+</div></div>
+
+</div>
+<!----------------------------->
+<div class='division'>
+<h2>Duplicates/Multiples</h2>
+
+<div class='section'>
+<h3>
+duplicate 'for' attibutes
+</h3>
+<div class='custom test'>
+<label for='dupfor001'>label1</label><input type="text" id='dupfor001' /><label for='dupfor001'>label2</label>
+</div></div>
+
+<div class='section'>
+<h3>
+duplicate 'id' attibutes
+</h3>
+<div class='custom test'>
+<input type="text" id='dupid001' />
+<input type="text" id='dupid001' />
+</div></div>
+
+<div class='section'>
+<h3>
+Multiple Legends
+</h3>
+<div class='custom test'>
+<fieldset>
+<legend>legend 1</legend><legend>legend 2</legend><legend>legend 3</legend>
+<input type='text' />
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+Multiple Figcaptions
+</h3>
+<div class='custom test'>
+<figure>
+<figcaption>figcaption 1</figcaption><figcaption>figcaption 2</figcaption><figcaption>figcaption 3</figcaption>
+<img src='logo.png' tabindex='0' />
+</figure>
+</div></div>
+
+<div class='section'>
+<h3>
+Multiple Captions
+</h3>
+<div class='custom test'>
+<table tabindex='0'>
+<caption>caption 1</caption><caption>caption 2</caption><caption>caption 3</caption>
+<tr><td></td></tr>
+</table>
+</div></div>
+
+</div>
+
+<!----------------------------->
+<div class='division'>
+<h2>ARIA Misspellings</h2>
+
+<div class='section'>
+<h3>
+ARIA Misspellings: aria-labeledby
+</h3>
+<div class='custom test'>
+<label>Oops:<input type='text' aria-labeledby='lby1' /></label>
+</div></div>
+
+<div class='section'>
+<h3>
+ARIA Misspellings: arialabelledby
+</h3>
+<div class='custom test'>
+<label>Oops:<input type='text' arialabelledby='lby1' /></label>
+</div></div>
+
+<div class='section'>
+<h3>
+ARIA Misspellings: labelledby
+</h3>
+<div class='custom test'>
+<label>Oops:<input type='text' labelledby='lby1' /></label>
+</div></div>
+
+<div class='section'>
+<h3>
+ARIA Misspellings: ariadescribedby
+</h3>
+<div class='custom test'>
+<label>Oops:<input type='text' ariadescribedby='dby1' /></label>
+</div></div>
+
+<div class='section'>
+<h3>
+ARIA Misspellings: describedby
+</h3>
+<div class='custom test'>
+<label>Oops:<input type='text' describedby='dby1' /></label>
+</div></div>
+
+<div class='section'>
+<h3>
+ARIA Misspellings: arialabel
+</h3>
+<div class='custom test'>
+<label>Oops:<input type='text' arialabel='aria' /></label>
+</div></div>
+
+<div class='section'>
+<h3>
+ARIA Misspellings: aria-role
+</h3>
+<div class='custom test'>
+<label>Oops:<input type='text' aria-role='alert' /></label>
+</div></div>
+
+</div>
+
+<!----------------------------->
+<div class='division'>
+<h2>Accesskey Issues</h2>
+
+<div class='section'>
+<h3>
+Accesskey that can't gain focus
+</h3>
+<div class='custom test'>
+<p accesskey='a'>Pressing alt+a does nothing because I don't have a tabindex</p> 
+</div></div>
+
+<div class='section'>
+<h3>
+Accesskey with two character
+</h3>
+<div class='custom test'>
+<button accesskey='bb'>My accesskey is bb. Press it really fast and maybe it will work??? JK</button> 
+</div></div>
+
+<div class='section'>
+<h3>
+Accesskey with shift key character
+</h3>
+<div class='custom test'>
+<button accesskey='$'>My accesskey is $. This actually works!</button> 
+</div></div>
+
+<div class='section'>
+<h3>
+Accesskey is empty
+</h3>
+<div class='custom test'>
+<button accesskey=''>My accesskey is Empty</button> 
+</div></div>
+
+</div>
+
+<!----------------------------->
+<div class='division'>
+<h2>Javascript Events</h2>
+
+<div class='section'>
+<h3>
+Javascript Event: onBlur
+</h3>
+<div class='custom test'>
+<input type='text' aria-label='aria' onblur="alert('onblur');" />
+</div></div>
+
+<div class='section'>
+<h3>
+Javascript Event: onChange
+</h3>
+<div class='custom test'>
+<select tabindex='0' onchange="alert('onChange');"><option>1</option><option selected='selected'>2</option><option>3</option></select>
+</div></div>
+
+<div class='section'>
+<h3>
+Javascript Event: onmouseover and not focusable
+</h3>
+<div class='custom test'>
+<span onmouseover='alert("onmouseover");'>You Can Hover Over Me, But You Can't Tab To Me</span>
+</div></div>
+
+<div class='section'>
+<h3>
+Javascript Event: ondoubleclick
+</h3>
+<div class='custom test'>
+<a href="#" ondblclick='alert()'>double click me</a>
+</div></div>
+
+</div>
+
+<!----------------------------->
+<div class='division'>
+<h2>Trickery</h2>
+
+<div class='section'>
+<h3>
+aria-labelledby that points to a span that has an aria-label
+</h3>
+<h4>reads the aria-label</h4>
+<div class='custom test'>
+<span id='lby3' aria-label='read this instead'>don't read this</span>
+<input type="text" aria-labelledby='lby3' />
+</div></div>
+
+<div class='section'>
+<h3>
+aria-describedby that points to a span that has an aria-label
+</h3>
+<h4>reads the aria-label</h4>
+<div class='custom test'>
+<span id='dby3' aria-label='read this instead'>don't read this</span>
+<a href="#" aria-describedby='dby3'>content</a>
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby pointing to a hidden element(spec says it should still read the hidden content)
+</h3>
+<h4>reads the hidden content</h4>
+<div class='custom test'>
+<span id='hashidden01' hidden>invisible</span>
+<a href='#' aria-labelledby='hashidden01'>content</a>
+</div></div>
+
+<div class='section'>
+<h3>
+innerText with hidden text (should ignore the hidden content)
+</h3>
+<h4>ignores hidden</h4>
+<div class='custom test'>
+<a href='#'>content <span hidden>invisible</span></a>
+</div></div>
+<!--5-->
+<div class='section'>
+<h3>
+aria-describedby(two idrefs)
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<input type='text' aria-describedby='dby1 dby2' />
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby(two idrefs)
+</h3>
+<h4>labelledby1 labelledby2</h4>
+<div class='custom test'>
+<input type='text' aria-labelledby='lby1 lby2' />
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby referencing 'id' of a legend
+</h3>
+<h4>legend legend+WARNING</h4>
+<div class='custom test'>
+<fieldset>
+<legend id='legendpointer'>legend</legend>
+<input type='text' aria-labelledby='legendpointer' />
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby referencing 'id' of a label(nested)
+</h3>
+<h4>label</h4>
+<div class='custom test'>
+<label id='labelnestedpointer'>label
+<input type='text' aria-labelledby='labelnestedpointer' />
+</label>
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby referencing 'id' of a label whose 'for' is referencing the 'id' of the element
+</h3>
+<h4>label</h4>
+<div class='custom test'>
+<label id='labelforpointer01' for='labelforpointer02'>label</label>
+<input type='text' aria-labelledby='labelforpointer01' id='labelforpointer02'  />
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby referencing 'id' of itself
+</h3>
+<h4>content</h4>
+<div class='custom test'>
+<div aria-labelledby='myself1' id='myself1' tabindex='0'>content</div>
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby referencing 'id' of itself multiple times
+</h3>
+<h4>content</h4>
+<div class='custom test'>
+<div aria-labelledby='myself myself myself myself' id='myself' tabindex='0'>content</div>
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby referencing 'id' of a link that has a title attribute
+</h3>
+<h4>Anchor content</h4>
+<div class='custom test'>
+<a href='#' id='linkwithtitle01' title='title' tabindex='-1'>Anchor content</a>
+<input type='text' aria-labelledby='linkwithtitle01' />
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby referencing 'id' of a div that has a link that has a title attribute
+</h3>
+<h4>Div content Anchor content</h4>
+<div class='custom test'>
+<div id='divwithlinkwithtitle01'>
+Div content
+<a href='#' title='title' tabindex='-1'>Anchor content</a>
+</div>
+<input type='text' aria-labelledby='divwithlinkwithtitle01' />
+</div></div>
+
+<div class='section'>
+<h3>
+aria-labelledby pointing to a legend
+</h3>
+<h4>legend legend+WARNING</h4>
+<div class='custom test'>
+<fieldset><legend id='leg'>legend<legend>
+<input type='text' aria-labelledby='leg' />
+</fieldset>
+</div></div>
+
+
+
+</div>
+
+<!------------------------------->
+
+<div class='division'>
+<h2>Empty Values/Contents &amp; Missing References</h2>
+
+<div class='section'>
+<h3>
+aria-labelledby missing reference
+</h3>
+<h4>labelledby+WARNING</h4>
+<div class='custom test'>
+<input type="text" aria-labelledby='lby1 missingid' />
+</div></div>
+
+<div class='section'>
+<h3>
+aria-describedby missing reference aria-label
+</h3>
+<h4>aria describedby+WARNING</h4>
+<div class='custom test'>
+<input type="text" aria-label='aria' aria-describedby='dby1 missingid' />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty Attribute: aria-label
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<input type="text" aria-label='' /><br />
+<input type="text" aria-label=' ' />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty Attribute: aria-labelledby
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<input type="text" aria-labelledby='' /><br />
+<input type="text" aria-labelledby=' ' />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty label (first without space, second with space)
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<label for='emptylabel001'></label><input type="text" id='emptylabel001' /><br />
+<label for='emptylabel002'> </label><input type="text" id='emptylabel002' /><br />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty label(nested) (first without space, second with space)
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<label><input type="text" /></label><br />
+<label> <input type="text" /></label><br />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty Attribute: aria-describedby
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<input type="text" aria-describedby='' /><br />
+<input type="text" aria-describedby=' ' />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty Attribute: title
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<input type="text" title='' /><br />
+<input type="text" title=' ' />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty Attribute: alt
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<img tabindex='0' alt='' src='logo.png' /><br />
+<img tabindex='0' alt=' ' src='logo.png' />
+</div></div>
+
+<div class='section'>
+<h3>
+Empty Legend (first without space, second with space)
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<fieldset>
+<legend></legend>
+<input type="text" />
+</fieldset>
+<fieldset>
+<legend> </legend>
+<input type="text" />
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+Empty Div
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<div tabindex='0'></div>
+</div></div>
+
+</div>
+
+<!---------------------->
+
+<div class='division'>
+<h2>Other Attributes</h2>
+<!--1-->
+<div class='section'>
+<h3>
+aria-invalid
+</h3>
+<h4>aria invalid entry</h4>
+<div class='custom test'>
+<input type='text' aria-label='aria' aria-invalid='true'  />
+</div></div>
+<!--2-->
+<div class='section'>
+<h3>
+aria-haspopup
+</h3>
+<h4>content menu</h4>
+<div class='custom test'>
+<button aria-haspopup='true' onclick='alert()'>content</button>
+</div></div>
+<!--3-->
+<div class='section'>
+<h3>
+aria-controls
+</h3>
+<h4>controller controls element</h4>
+<div class='custom test'>
+<button aria-controls='control01'>controller</button>
+<div id='control01'>content</div>
+</div></div>
+<!--4-->
+<div class='section'>
+<h3>
+aria-hidden
+</h3>
+<h4>IGNORES HIDDEN ELEMENT(READS "black")</h4>
+<div class='custom test'>
+<div tabindex='0'>Black <span aria-hidden='true' style='background-color:black; color:white'>White</span></div>
+</div></div>
+<!--5-->
+<div class='section'>
+<h3>
+hidden
+</h3>
+<h4>IGNORES HIDDEN ELEMENT(READS "black")</h4>
+<div class='custom test'>
+<div tabindex='0'>Black <span hidden>Green</span></div>
+</div></div>
+
+</div>
+
+<!---------------->
+
+<div class='division'>
+<h2>Matching</h2>
+<!--1-->
+<div class='section'>
+<h3>
+Matching, aria-label, title
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<input type='text' aria-label='matching' title='matching' />
+</div></div>
+<!--2-->
+<div class='section'>
+<h3>
+Matching, label, title
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<label>matching<input type='text' title='matching' /></label>
+</div></div>
+<!--3-->
+<div class='section'>
+<h3>
+Matching, aria-labelledby, title
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<input type='text' aria-labelledby='matching1' title='matching' />
+</div></div>
+<!--4-->
+<div class='section'>
+<h3>
+Matching, aria-label, aria-describedby
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<input type='text' aria-label='matching' aria-describedby='matching2' />
+</div></div>
+<!--5-->
+<div class='section'>
+<h3>
+Matching, label, aria-describedby
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<label>matching<input type='text' aria-describedby='matching2' /></label>
+</div></div>
+<!--6-->
+<div class='section'>
+<h3>
+Matching, aria-labelledby, aria-describedby
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<input type='text' aria-labelledby='matching1'  aria-describedby='matching2' />
+</div></div>
+<!--7-->
+<div class='section'>
+<h3>
+Matching, legend, aria-label
+</h3>
+<h4>DISPLAYS TWICE</h4>
+<div class='custom test'>
+<fieldset>
+<legend>matching</legend>
+<input type='text' aria-label='matching'  />
+</fieldset>
+</div></div>
+<!--8-->
+<div class='section'>
+<h3>
+Matching, legend, label
+</h3>
+<h4>DISPLAYS TWICE</h4>
+<div class='custom test'>
+<fieldset>
+<legend>matching</legend>
+<label>matching<input type='text' /></label>
+</fieldset>
+</div></div>
+<!--9-->
+<div class='section'>
+<h3>
+Matching, legend, aria-labelledby
+</h3>
+<h4>DISPLAYS TWICE</h4>
+<div class='custom test'>
+<fieldset>
+<legend>matching</legend>
+<input type='text' aria-labelledby='matching1'  />
+</fieldset>
+</div></div>
+<!--10-->
+<div class='section'>
+<h3>
+Matching, alt, title
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<img src='logo.png' alt='matching' title='matching' tabindex='0' />
+</div></div>
+<!--11-->
+<div class='section'>
+<h3>
+Matching, alt, aria-describedby
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<img src='logo.png' alt='matching' aria-describedby='matching2' tabindex='0' />
+</div></div>
+<!--12-->
+<div class='section'>
+<h3>
+Matching, content, aria-describedby
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<a href='#' aria-describedby='matching2'>matching</a>
+</div></div>
+<!--13-->
+<div class='section'>
+<h3>
+Matching, content, title
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<a href='#' title='matching'>matching</a>
+</div></div>
+<!--14-->
+<div class='section'>
+<h3>
+Matching, value, aria-describedby
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<input type='submit' value='matching' aria-describedby='matching2' />
+</div></div>
+<!--15-->
+<div class='section'>
+<h3>
+Matching, content, title
+</h3>
+<h4>CATCHES MATCH</h4>
+<div class='custom test'>
+<input type='submit' value='matching' title='matching' />
+</div></div>
+
+</div>
+
+<!------------------------------->
+
+<div class='division'>
+<h2>Tabindex</h2>
+
+<div class='section'>
+<h3>
+Tabindex=-1 with Tabbable Parent
+</h3>
+<div class='custom test'>
+<div tabindex='0' style='display:inline; margin:5em; border:1px solid gray'>
+<a href="#" tabindex="-1">I have a parent, tabindex is negative</a>
+</div>
+</div></div>
+
+<div class='section'>
+<h3>
+Tabindex=-1 No Tabbable Parent
+</h3>
+<div class='custom test'>
+<a href="#" tabindex="-1">Tabindex is negative, I have no tabbable parent</a>
+</div></div>
+
+<div class='section'>
+<h3>
+Tabindex is empty
+</h3>
+<div class='custom test'>
+<a href="#" tabindex="">My Tabindex is empty</a>
+</div></div>
+
+<div class='section'>
+<h3>
+Tabindex is not a number
+</h3>
+<div class='custom test'>
+<a href="#" tabindex="j">My Tabindex is not a number</a>
+</div></div>
+
+</div>
+
+<!------------------------------->
+
+
+
+</div>
+
+<!---------------------->
+<!---------------------->
+
+<footer>
+Navigation:
+<a href="andi_test1.html">1 (Form Elements)</a>
+<a href="andi_test2.html">2 (Nested Elements)</a>
+<a href="andi_test4.html">4 (Basic Elements)</a>
+<a href="andi_test5.html">5 (Tables)</a>
+<a href="andi_test6.html">6 (ARIA Roles)</a>
+</footer>
+
+</body>
+</html>

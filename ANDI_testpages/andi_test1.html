@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ANDI Test Page 1</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="John Cotter" />
+<meta charset="UTF-8" />
+<meta name="description" content="A test page for testing the output of screen readers and the ANDI accessibility test tool" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="andi_test.js"></script>
+
+<script>
+$(document).ready(function(){
+	//Run the auto tests
+	autoTest("#input-text");
+	autoTest("#input-radio");
+	autoTest("#input-checkbox");
+	autoTest("#input-file");
+	autoTest("#input-password");
+	autoTest("#input-image");
+	autoTest("#input-range");
+	autoTest("#input-submit");
+	autoTest("#button");
+	autoTest("#select");
+	autoTest("#textarea");
+	autoTest("#fieldset");
+	
+	getOnWithIt();
+});
+
+</script>
+<link rel="stylesheet" href="andi_test.css" />
+</head>
+
+<body>
+<div id='left'>
+<header>
+<h1>ANDI TEST PAGE 1<br />native form elements</h1>
+
+<div id='references'>
+<span id='dby1'>describedBy</span>
+<span id='dby2'>describedBy2</span>
+<span id='lby1'>labelledBy</span>
+<span id='lby2'>labelledBy2</span>
+<span id='matching1'>matching</span>
+<span id='matching2'>matching</span>
+</div>
+<p style='font-size:smaller; color:gray; text-align: justify; text-justify: inter-word;'>
+Use this page test ANDI output on a native form elements. 
+</p>
+
+</header>
+<div id='main'>
+
+<!------------------------------------>
+<div class='division' id='input-text'>
+<h2>INPUT[text]</h2>
+
+<div class='autoTestCondition'>
+<input type='text' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!--This list of h4s should be comma delimited-->
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title+WARNING</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title+WARNING</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+</div>
+<!----------------------------------->
+
+<div class='division' id='input-radio'>
+<h2>INPUT[radio]</h2>
+
+<div class='autoTestCondition'>
+<input type='radio' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria+CAUTION</h4>
+<!--03--><h4>labelledby+CAUTION</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title+CAUTION</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby+CAUTION</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title+CAUTION</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title+CAUTION</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby+CAUTION</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby+CAUTION</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title+WARNING</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby+CAUTION</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria+CAUTION</h4>
+<!--51--><h4>labelledby+CAUTION</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title+CAUTION</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+<div class='section'>
+<h3>
+INPUT[radio], label(nested)/fieldset, [aria-labelledby]
+</h3>
+<h4>labelledby</h4>
+<div class='custom test'>
+<fieldset>
+<label>label<input type='radio'  aria-labelledby='lby1'/></label>
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[radio], label[for]/fieldset, aria-labelledby, no legend
+</h3>
+<h4>labelledby</h4>
+<div class='custom test'>
+<fieldset>
+<label for='inputLabelRadioFieldset02'>label</label><input type='radio' id='inputLabelRadioFieldset02' aria-labelledby='lby1' />
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[radio], value
+</h3>
+<h4>DANGER</h4>
+<div class='custom test'>
+<fieldset>
+<input type='radio' value='value' />
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[radio], [name], label[for]/fieldset
+</h3>
+<h4>label1 : label2</h4>
+<div class='custom test'>
+<fieldset>
+<label for='labelForDescribedby04'>label1</label><input type='radio' id='labelForDescribedby04' name='labelradioname04' value='1' />
+<label for='labelForDescribedby05'>label2</label><input type='radio' id='labelForDescribedby05' name='labelradioname04' value='2' />
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[radio], [name], label[for]
+</h3>
+<h4>label1 : label2</h4>
+<div class='custom test'>
+<label for='labelForDescribedby07'>label1</label><input type='radio' id='labelForDescribedby07' name='labelradioname07' value='1' />
+<label for='labelForDescribedby08'>label2</label><input type='radio' id='labelForDescribedby08' name='labelradioname07' value='2' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[radio], [name], label(nested)/fieldset
+</h3>
+<h4>label1 : label2</h4>
+<div class='custom test'>
+<fieldset>
+<label>label1<input type='radio' name='labelradioname09' value='1' /></label>
+<label>label2<input type='radio' name='labelradioname09' value='2' /></label>
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[radio], [name], label(nested)
+</h3>
+<h4>label1 : label2</h4>
+<div class='custom test'>
+<label>label1<input type='radio' name='labelradioname10' value='1' /></label>
+<label>label2<input type='radio' name='labelradioname10' value='2' /></label>
+</div></div>
+
+</div>
+
+<!------------------------------>
+
+<div class='division' id='input-checkbox'>
+<h2>INPUT[checkbox]</h2>
+
+<div class='autoTestCondition'>
+<input type='checkbox' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria+CAUTION</h4>
+<!--03--><h4>labelledby+CAUTION</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title+CAUTION</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby+WARNING</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title+CAUTION</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title+CAUTION</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby+CAUTION</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title+WARNING</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title+WARNING</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby+CAUTION</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria+CAUTION</h4>
+<!--51--><h4>labelledby+CAUTION</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title+CAUTION</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+<div class='section'>
+<h3>
+INPUT[checkbox], label(nested)/fieldset, aria-labelledby
+</h3>
+<h4>labelledby</h4>
+<div class='custom test'>
+<fieldset>
+<label>label<input type='checkbox'  aria-labelledby='lby1'/></label>
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[checkbox], label[for]/fieldset, aria-labelledby
+</h3>
+<h4>labelledby</h4>
+<div class='custom test'>
+<fieldset>
+<label for='inputLabelCheckboxFieldset02'>label</label><input type='checkbox' id='inputLabelCheckboxFieldset02' aria-labelledby='lby1' />
+</fieldset>
+</div></div>
+
+</div>
+<!--------------------------------->
+
+<div class='division' id='input-file'>
+<h2>INPUT[file]</h2>
+
+<div class='autoTestCondition'>
+<input type='file' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title+WARNING</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title+WARNING</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+</div>
+
+<!-------------------------->
+
+<div class='division' id='input-password'>
+<h2>INPUT[password]</h2>
+
+<div class='autoTestCondition'>
+<input type='password' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title+WARNING</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title+WARNING</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>password</h4>
+</div>
+
+<div class='section'>
+<h3>
+INPUT[password], "password" is the label's content
+</h3>
+<h4>label</h4>
+<div class='custom test'>
+<label for='password01'>password</label><input type='password' id='password01' />
+</div></div>
+
+</div>
+
+<!-------------------------->
+
+<div class='division' id='input-range'>
+<h2>INPUT[range]</h2>
+
+<div class='autoTestCondition'>
+<input type="range" min="1" max="5" tabindex='0' /> 
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title+WARNING</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title+WARNING</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+</div>
+
+<!-------------------------->
+
+<div class='division' id='input-image'>
+<h2>INPUT[image]</h2>
+
+<div class='autoTestCondition'>
+<input type='image' src='logo.png' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>alt</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>alt title</h4>
+<!--18--><h4>alt describedby</h4>
+<!--19--><h4>title describedby</h4>
+<!--20--><h4>alt describedby</h4
+<!--21--><h4>legend alt describedby</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria</h4>
+<!--27--><h4>alt</h4>
+<!--28--><h4>labelledby</h4>
+<!--29--><h4>alt</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend alt title</h4>
+<!--37--><h4>legend alt title</h4>
+<!--38--><h4>legend alt</h4>
+<!--39--><h4>legend label title</h4>
+<!--40--><h4>legend alt</h4>
+<!--41--><h4>legend label title</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby</h4>
+<!--46--><h4>aria title</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>alt</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+<div class='section'>
+<h3>
+INPUT[image], value
+</h3>
+<h4>value</h4>
+<div class='custom test'>
+<input type='image' src='logo.png' tabindex='0' value='value' />
+</div></div>
+
+</div>
+
+<!------------------------------------>
+
+<div class='division' id='input-submit'>
+<h2>INPUT[submit]</h2>
+
+<div class='autoTestCondition'>
+<input type='submit' value='value' tabindex='0' />
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>value</h4>
+<!--02--><h4>aria value</h4>
+<!--03--><h4>labelledby value</h4>
+<!--04--><h4>value</h4>
+<!--05--><h4>labelledby value+WARNING</h4>
+<!--06--><h4>labelledby value</h4>
+<!--07--><h4>labelledby value+WARNING</h4>
+<!--08--><h4>legend value</h4>
+<!--09--><h4>legend labelledby value+WARNING</h4>
+<!--10--><h4>labelledby value+WARNING</h4>
+<!--11--><h4>aria value+WARNING</h4>
+<!--12--><h4>labelledby value+WARNING</h4>
+<!--13--><h4>value+WARNING</h4>
+<!--14--><h4>value title</h4>
+<!--15--><h4>value+WARNING</h4>
+<!--16--><h4>value describedby</h4>
+<!--17--><h4>value title+WARNING</h4>
+<!--18--><h4>value describedby+WARNING</h4>
+<!--19--><h4>value describedby+WARNING</h4>
+<!--20--><h4>value describedby+WARNING</h4>
+<!--21--><h4>value describedby+WARNING</h4>
+<!--22--><h4>aria value</h4>
+<!--23--><h4>value title</h4>
+<!--24--><h4>labelledby value</h4>
+<!--25--><h4>value title+WARNING</h4>
+<!--26--><h4>aria value+WARNING</h4>
+<!--27--><h4>value+WARNING</h4>
+<!--28--><h4>labelledby value+WARNING</h4>
+<!--29--><h4>value+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>value describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>value describedby</h4>
+<!--34--><h4>legend value</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend value title+WARNING</h4>
+<!--37--><h4>legend value title+WARNING</h4>
+<!--38--><h4>legend value+WARNING</h4>
+<!--39--><h4>legend value title</h4>
+<!--40--><h4>legend value+WARNING</h4>
+<!--41--><h4>legend value title</h4>
+<!--42--><h4>legend value</h4>
+<!--43--><h4>legend value</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria value+WARNING</h4>
+<!--47--><h4>value</h4>
+<!--48--><h4>value</h4>
+<!--49--><h4>value</h4>
+<!--50--><h4>aria value</h4>
+<!--51--><h4>labelledby value</h4>
+<!--52--><h4>value+WARNING</h4>
+<!--53--><h4>value title</h4>
+<!--54--><h4>value describedby</h4>
+<!--55--><h4>value</h4>
+<!--56--><h4>value</h4>
+</div>
+
+<div class='section'>
+<h3>
+INPUT[submit], label(nested), fieldset
+</h3>
+<h4>value</h4>
+<div class='custom test'>
+<fieldset>
+<label>label<input type='submit' value='value' /></label>
+</fieldset>
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[button]
+</h3>
+<h4>value</h4>
+<div class='custom test'>
+<input type='button' value='value' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[reset]
+</h3>
+<h4>value</h4>
+<div class='custom test'>
+<input type='reset' value='value' />
+</div></div>
+
+<div class='section'>
+<h3>
+INPUT[submit], no value
+</h3>
+<h4>value(added by browser)</h4>
+<div class='custom test'>
+<input type='submit' />
+</div></div>
+
+</div>
+
+<!-------------------------->
+
+<div class='division' id='button'>
+<h2>BUTTON</h2>
+
+<div class='autoTestCondition'>
+<button tabindex='0'>content</button>
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>content</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>content</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>content</h4>
+<!--09--><h4>labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>content</h4>
+<!--14--><h4>content title</h4>
+<!--15--><h4>content+WARNING</h4>
+<!--16--><h4>content describedby</h4>
+<!--17--><h4>content title+WARNING</h4>
+<!--18--><h4>content describedby+WARNING</h4>
+<!--19--><h4>content describedby</h4>
+<!--20--><h4>content describedby+WARNING</h4>
+<!--21--><h4>content describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>content title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>content title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>content+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>content+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>content describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>content describedby+WARNING</h4>
+<!--34--><h4>content</h4>
+<!--35--><h4>labelledby describedby+WARNING</h4>
+<!--36--><h4>content title+WARNING</h4>
+<!--37--><h4>content title+WARNING</h4>
+<!--38--><h4>content+WARNING</h4>
+<!--39--><h4>content title</h4>
+<!--40--><h4>content+WARNING</h4>
+<!--41--><h4>content title</h4>
+<!--42--><h4>content</h4>
+<!--43--><h4>content</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>content</h4>
+<!--48--><h4>content</h4>
+<!--49--><h4>content</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>content+WARNING</h4>
+<!--53--><h4>content title</h4>
+<!--54--><h4>content describedby</h4>
+<!--55--><h4>content</h4>
+<!--56--><h4>content</h4>
+</div>
+
+<div class='section'>
+<h3>
+BUTTON, value
+</h3>
+<h4>content</h4>
+<div class='custom test'>
+<button value='value'>content</button>
+</div></div>
+
+</div>
+
+<!------------------------------------->
+
+<div class='division' id='select'>
+<h2>SELECT</h2>
+
+<div class='autoTestCondition'>
+<select tabindex='0'><option>1</option><option selected='selected'>2</option><option>3</option></select>
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+</div>
+<!--------------------------->
+
+<div class='division' id='textarea'>
+<h2>TEXTAREA</h2>
+
+<div class='autoTestCondition'>
+<textarea tabindex='0'>content</textarea>
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>label</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend label</h4>
+<!--09--><h4>legend labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria</h4>
+<!--12--><h4>labelledby</h4>
+<!--13--><h4>label</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend title describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>label title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>label title</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>label+WARNING</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>label+WARNING</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>label describedby</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>label describedby</h4>
+<!--34--><h4>DANGER</h4>
+<!--35--><h4>legend labelledby describedby+WARNING</h4>
+<!--36--><h4>legend label title+WARNING</h4>
+<!--37--><h4>legend label title+WARNING</h4>
+<!--38--><h4>legend label+WARNING</h4>
+<!--39--><h4>legend label title</h4>
+<!--40--><h4>legend label+WARNING</h4>
+<!--41--><h4>legend label title</h4>
+<!--42--><h4>legend label</h4>
+<!--43--><h4>legend label</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>label</h4>
+<!--48--><h4>label</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>label</h4>
+<!--56--><h4>label</h4>
+</div>
+
+</div>
+
+<!--------------------->
+
+<div class='division' id='fieldset'>
+<h2>FIELDSET</h2>
+<div class='autoTestCondition'>
+<fieldset tabindex='0'></fieldset>
+</div>
+<div class='autoTestResults'>
+<!--01--><h4>DANGER</h4>
+<!--02--><h4>aria</h4>
+<!--03--><h4>labelledby</h4>
+<!--04--><h4>DANGER</h4>
+<!--05--><h4>labelledby+WARNING</h4>
+<!--06--><h4>labelledby</h4>
+<!--07--><h4>labelledby+WARNING</h4>
+<!--08--><h4>legend</h4>
+<!--09--><h4>labelledby+WARNING</h4>
+<!--10--><h4>labelledby+WARNING</h4>
+<!--11--><h4>aria+WARNING</h4>
+<!--12--><h4>labelledby+WARNING</h4>
+<!--13--><h4>DANGER</h4>
+<!--14--><h4>title</h4>
+<!--15--><h4>DANGER</h4>
+<!--16--><h4>DANGER</h4>
+<!--17--><h4>title+WARNING</h4>
+<!--18--><h4>DANGER</h4>
+<!--19--><h4>title describedby+WARNING</h4>
+<!--20--><h4>title describedby+WARNING</h4>
+<!--21--><h4>legend describedby+WARNING</h4>
+<!--22--><h4>aria title</h4>
+<!--23--><h4>title</h4>
+<!--24--><h4>labelledby title</h4>
+<!--25--><h4>title+WARNING</h4>
+<!--26--><h4>aria+WARNING</h4>
+<!--27--><h4>DANGER</h4>
+<!--28--><h4>labelledby+WARNING</h4>
+<!--29--><h4>DANGER</h4>
+<!--30--><h4>aria describedby</h4>
+<!--31--><h4>DANGER</h4>
+<!--32--><h4>labelledby describedby</h4>
+<!--33--><h4>DANGER</h4>
+<!--34--><h4>legend</h4>
+<!--35--><h4>labelledby describedby+WARNING</h4>
+<!--36--><h4>legend title+WARNING</h4>
+<!--37--><h4>legend title+WARNING</h4>
+<!--38--><h4>legend+WARNING</h4>
+<!--39--><h4>legend title</h4>
+<!--40--><h4>legend+WARNING</h4>
+<!--41--><h4>legend title+WARNING</h4>
+<!--42--><h4>legend</h4>
+<!--43--><h4>legend+WARNING</h4>
+<!--44--><h4>aria describedby</h4>
+<!--45--><h4>aria describedby+WARNING</h4>
+<!--46--><h4>aria title+WARNING</h4>
+<!--47--><h4>DANGER</h4>
+<!--48--><h4>DANGER</h4>
+<!--49--><h4>DANGER</h4>
+<!--50--><h4>aria</h4>
+<!--51--><h4>labelledby</h4>
+<!--52--><h4>DANGER</h4>
+<!--53--><h4>title</h4>
+<!--54--><h4>DANGER</h4>
+<!--55--><h4>DANGER</h4>
+<!--56--><h4>DANGER</h4>
+</div>
+
+</div>
+
+<!--------------------->
+
+</div>
+
+<!---------------------->
+<!---------------------->
+<div id='analysisTable'>
+<h2 id='tableName'></h2>
+<button onclick="closeAnalysisTable()" class='button'>Close</button>|
+<button class='differences button' onclick='difference_sr1_sr2(this)'>SR1 vs SR2</button>|
+<button class='differences button' onclick='difference_sr1_andi(this)'>SR1 vs ANDI</button>|
+<button class='differences button' onclick='difference_sr2_andi(this)'>SR2 vs ANDI</button>|
+<button class='differences button' onclick='difference_all(this)'>All Diff</button>|
+<button class='button' onclick='resetDifferences()'>Reset</button>
+
+<div id='tableScrollable'>
+<table summary='analysis of results' tabindex='0' accesskey='t'>
+<thead>
+<th style="width:2em" scope='col'>#</th>
+<th style="width:15em" scope='col'>Accessible Components</th>
+<th class='output col-sr1' scope='col'>SR1 Says</th>
+<th class='output col-sr2' scope='col'>SR2 Says</th>
+<th class='output col-andi' scope='col'>ANDI Should Say</th>
+<th class='output col-issues' scope='col'>ANDI Issues</th>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+
+</body>
+<script>
+function addTestCondition(index, element, h3){
+	//These functions manipulate the elements. They are to be called in a chained fashion.
+	//label should be called near the end. Legend should be called last.
+	function ariaLabel(element){
+		$(h3).append(", aria-label");
+		return $(element).attr("aria-label","aria");
+	}
+	function ariaLabelledby(element){
+		$(h3).append(", labelledby");
+		return $(element).attr("aria-labelledby","lby1");
+	}
+	function title(element){
+		$(h3).append(", title");
+		return $(element).attr("title","title");
+	}
+	function alt(element){
+		$(h3).append(", alt");
+		return $(element).attr("alt","alt");
+	}
+	function ariaDescribedby(element){
+		$(h3).append(", describedby");
+		return $(element).attr("aria-describedby","dby1");
+	}
+	function label(element){
+		$(h3).append(", label(nested)");
+		return $(element).wrap("<label>label</label>");
+	}
+	function labelFor(element){
+		$(h3).append(", label[for]");
+		idUniqueIndex++;
+		$(element).attr("id",idUniqueIndex);
+		return $(element).before("<label for='"+idUniqueIndex+"'>label</label>");
+	}
+	function legend(element){
+		$(h3).append(", legend/fieldset");
+		if($(element).is("fieldset"))
+			return $(element).prepend("<legend>legend</legend>");
+		else
+			return $(element).wrap("<fieldset></fieldset>").before("<legend>legend</legend>");
+	}
+	function labelForFieldset(element){
+		$(h3).append(", label[for]/fieldset");
+		idUniqueIndex++;
+		$(element).attr("id",idUniqueIndex);
+		if($(element).is("fieldset"))
+			return $(element).before("<label for='"+idUniqueIndex+"'>label</label>");
+		else
+			return $(element).wrap("<fieldset></fieldset>").before("<label for='"+idUniqueIndex+"'>label</label>");
+	}
+	function labelFieldset(element){
+		$(h3).append(", label(nested)/fieldset");
+		if($(element).is("fieldset"))
+			return $(element).wrap("<label>label</label>");
+		else
+			return $(element).wrap("<fieldset></fieldset>").wrap("<label>label</label>");
+	}
+	function placeholder(element){
+		$(h3).append(", placeholder");
+		return $(element).attr("placeholder","placeHolder");
+	}
+//namers
+	if(1 == index){
+		ariaLabel(element);
+	}
+	else if(2 == index){
+		ariaLabelledby(element);
+	}
+	else if(3 == index){
+		label(element);
+	}
+	else if(4 == index){
+		ariaLabel(
+		ariaLabelledby(element));
+	}
+	else if(5 == index){
+		ariaLabelledby(
+		label(element));
+	}
+	else if(6 == index){
+		ariaLabel(
+		ariaLabelledby(
+		label(element)));
+	}
+	else if(7 == index){
+		label(
+		legend(element));
+	}
+	else if(8 == index){
+		ariaLabel(
+		ariaLabelledby(
+		label(
+		legend(element))));
+	}
+//label/for
+	else if(9 == index){
+		ariaLabel(
+		ariaLabelledby(
+		labelFor(element)));
+	}
+	else if(10 == index){
+		ariaLabel(
+		labelFor(element));
+	}
+	else if(11 == index){
+		ariaLabelledby(
+		labelFor(element));
+	}
+	else if(12 == index){
+		labelFor(element);
+	}
+//describers
+	else if(13 == index){
+		title(element);
+	}
+	else if(14 == index){
+		alt(element);
+	}
+	else if(15 == index){
+		ariaDescribedby(element);
+	}
+	else if(16 == index){
+		title(
+		alt(element));
+	}
+	else if(17 == index){
+		alt(
+		ariaDescribedby(element));
+	}
+	else if(18 == index){
+		title(
+		ariaDescribedby(element));
+	}
+	else if(19 == index){
+		title(
+		alt(
+		ariaDescribedby(element)));
+	}
+	else if(20 == index){
+		title(
+		alt(
+		ariaDescribedby(
+		legend(element))));
+	}
+//combine
+	else if(21 == index){
+		title(
+		ariaLabel(element));
+	}
+	else if(22 == index){
+		title(
+		label(element));
+	}
+	else if(23 == index){
+		title(
+		ariaLabelledby(element));
+	}
+	else if(24 == index){
+		title(
+		labelFor(element));
+	}
+	else if(25 == index){
+		alt(
+		ariaLabel(element));
+	}
+	else if(26 == index){
+		alt(
+		label(element));
+	}
+	else if(27 == index){
+		alt(
+		ariaLabelledby(element));
+	}
+	else if(28 == index){
+		alt(
+		labelFor(element));
+	}
+	else if(29 == index){
+		ariaDescribedby(
+		ariaLabel(element));
+	}
+	else if(30 == index){
+		ariaDescribedby(
+		label(element));
+	}
+	else if(31 == index){
+		ariaDescribedby(
+		ariaLabelledby(element));
+	}
+	else if(32 == index){
+		ariaDescribedby(
+		labelFor(element));
+	}
+//legend
+	else if(33 == index){
+		legend(element);
+	}
+//too much
+	else if(34 == index){
+		ariaLabel(
+		ariaLabelledby(
+		title(
+		alt(
+		ariaDescribedby(
+		label(
+		legend(element)))))));
+	}
+//old school
+	else if(35 == index){
+		title(
+		alt(
+		label(
+		legend(element))));
+	}
+	else if(36 == index){
+		title(
+		alt(
+		labelFor(
+		legend(element))));
+	}
+	else if(37 == index){
+		alt(
+		label(
+		legend(element)));
+	}
+	else if(38 == index){
+		title(
+		label(
+		legend(element)));
+	}
+	else if(39 == index){
+		alt(
+		labelFor(
+		legend(element)));
+	}
+	else if(40 == index){
+		title(
+		labelFor(
+		legend(element)));
+	}
+	else if(41 == index){
+		label(
+		legend(element));
+	}
+	else if(42 == index){
+		labelFor(
+		legend(element));
+	}
+//blend of old and new namers
+	else if(43 == index){
+		ariaLabel(
+		ariaDescribedby(
+		title(element)));
+	}
+	else if(44 == index){
+		ariaLabel(
+		ariaDescribedby(
+		alt(element)));
+	}
+	else if(45 == index){
+		ariaLabel(
+		title(
+		alt(element)));
+	}
+	else if(46 == index){
+		labelFieldset(element);
+	}
+	else if(47 == index){
+		labelForFieldset(element);
+	}
+//placeholder
+	else if(48 == index){
+		placeholder(element);
+	}
+	else if(49 == index){
+		ariaLabel(
+		placeholder(element));
+	}
+	else if(50 == index){
+		ariaLabelledby(
+		placeholder(element));
+	}
+	else if(51 == index){
+		alt(
+		placeholder(element));
+	}
+	else if(52 == index){
+		title(
+		placeholder(element));
+	}
+	else if(53 == index){
+		ariaDescribedby(
+		placeholder(element));
+	}
+	else if(54 == index){
+		label(
+		placeholder(element));
+	}
+	else if(55 == index){
+		labelFor(
+		placeholder(element));
+	}
+	<!-- set numberOfAutoTests to one more than this -->
+}
+var numberOfAutoTests = 56; //if more test conditions are added, increase this number
+</script>
+
+<footer>
+Navigation:
+<a href="andi_test2.html">2 (Nested Elements)</a>
+<a href="andi_test3.html">3 (Miscellaneous Scenarios)</a>
+<a href="andi_test4.html">4 (Basic Elements)</a>
+<a href="andi_test5.html">5 (Tables)</a>
+<a href="andi_test6.html">6 (ARIA Roles)</a>
+</footer>
+
+</html>
